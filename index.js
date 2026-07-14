@@ -1,13 +1,14 @@
 // index.js
 // SillyTavern Character Tools — extension entry point.
 //
-// One panel drives the whole suite. The primary action, "Fix Characters", runs
-// the server's single-pass character operation: merge tags (using the dictionary
-// curated here), repair/upgrade each card, and compress its image — one write
-// per card. "Compress Images" is the user/images sidecar. The tag dictionary is
-// owned here (persisted in extension settings, seeded from the shipped
-// tag-dictionary.json) and passed to the server per-run; the server holds none
-// of its own, so editing tags never needs a server restart.
+// One panel drives the whole suite. "Fix Characters" repairs/upgrades each card
+// and compresses its image — one write per card — and deliberately leaves tags
+// alone. Merging tags is a separate operation: you curate the dictionary in the
+// Edit Tag Dictionary editor and hit "Apply Tags" there to write the merge onto
+// your cards. "Compress Images" is the user/images sidecar. The tag dictionary
+// is owned here (persisted in extension settings, seeded from the shipped
+// tag-dictionary.json) and passed to the server only on an Apply Tags run; the
+// server holds none of its own, so editing tags never needs a server restart.
 
 import { openModal } from './ui-editor.js';
 import { probePlugin, fetchUsers, fetchStats, runJob } from './api.js';
@@ -123,7 +124,7 @@ function buildPanel(users) {
                 <div class="inline-drawer-icon fa-solid fa-circle-chevron-down down"></div>
             </div>
             <div class="inline-drawer-content">
-                <p class="sct-desc" style="font-size:12px; opacity:0.8; margin:0 0 10px;">Merge tags, repair cards, and compress images across a user's library. <b>Fix Characters</b> does all three in one pass; the tag dictionary decides what merges.</p>
+                <p class="sct-desc" style="font-size:12px; opacity:0.8; margin:0 0 10px;">Repair cards and compress images across a user's library. <b>Fix Characters</b> repairs and compresses (it never changes tags); to merge tags, open <b>Edit Tag Dictionary</b> and hit <b>Apply Tags</b>.</p>
                 <div style="display:flex; align-items:center; gap:8px; margin-bottom:10px;">
                     <label for="sct-user" style="white-space:nowrap; font-size:13px;">User</label>
                     <select id="sct-user" class="text_pole" style="flex:1;">${options}</select>
@@ -245,16 +246,21 @@ async function runStats() {
  * Run a server job over SSE, streaming progress into the panel.
  * @param {string} path  endpoint path, e.g. '/fix-characters'
  * @param {'characters'|'images'} kind
+ * @param {{withDictionary?: boolean}} [opts]  attach the tag dictionary (the
+ *   Apply Tags / merge path). Off by default, so Fix Characters only repairs and
+ *   compresses and never touches tags.
  */
-async function runPanelJob(path, kind) {
+async function runPanelJob(path, kind, { withDictionary = false } = {}) {
     const user = document.getElementById('sct-user')?.value;
     if (!user) {
         toastr.info('No user selected.', 'Character Tools');
         return;
     }
 
+    const opLabel = kind === 'images' ? 'Compression' : withDictionary ? 'Apply Tags' : 'Fix Characters';
+
     const body = { user };
-    if (kind === 'characters') {
+    if (kind === 'characters' && withDictionary) {
         const dict = getRunDictionary();
         if (dict) body.dictionary = dict;
     }
@@ -294,7 +300,7 @@ async function runPanelJob(path, kind) {
         appendLog(`Compressed: ${result.filesCompressed.toLocaleString()}`);
         if (kind === 'characters') {
             appendLog(`Repaired:   ${(result.cardsRepaired ?? 0).toLocaleString()}`);
-            appendLog(`Tags fixed: ${(result.tagsChanged ?? 0).toLocaleString()}`);
+            if (withDictionary) appendLog(`Tags fixed: ${(result.tagsChanged ?? 0).toLocaleString()}`);
         }
         appendLog(`Saved:      ${formatBytes(result.bytesSaved)}`);
         if (result.errors.length > 0) {
@@ -303,9 +309,16 @@ async function runPanelJob(path, kind) {
         }
 
         const savedMsg = `Saved ${formatBytes(result.bytesSaved)} across ${result.filesCompressed.toLocaleString()} files`;
-        const summary = kind === 'characters'
-            ? `${(result.tagsChanged ?? 0).toLocaleString()} tag${result.tagsChanged === 1 ? '' : 's'} fixed, ${(result.cardsRepaired ?? 0).toLocaleString()} card${result.cardsRepaired === 1 ? '' : 's'} repaired. ${savedMsg}`
-            : savedMsg;
+        const repaired = result.cardsRepaired ?? 0;
+        const tags = result.tagsChanged ?? 0;
+        let summary;
+        if (kind !== 'characters') {
+            summary = savedMsg;
+        } else if (withDictionary) {
+            summary = `${tags.toLocaleString()} tag${tags === 1 ? '' : 's'} fixed, ${repaired.toLocaleString()} card${repaired === 1 ? '' : 's'} repaired. ${savedMsg}`;
+        } else {
+            summary = `${repaired.toLocaleString()} card${repaired === 1 ? '' : 's'} repaired. ${savedMsg}`;
+        }
         toastr.success(summary, 'Character Tools');
 
         // Character runs rewrite cards on disk — refresh ST so it picks them up.
@@ -329,13 +342,17 @@ async function runPanelJob(path, kind) {
     } catch (err) {
         appendLog(`Error: ${err.message}`);
         console.error(MODULE_NAME, err);
-        toastr.error(`${kind === 'characters' ? 'Fix Characters' : 'Compression'} failed. See the log for details.`, 'Character Tools');
+        toastr.error(`${opLabel} failed. See the log for details.`, 'Character Tools');
     } finally {
         setRunning(false);
     }
 }
 
+// Fix Characters: repair + compress only (no dictionary → the server skips the tag merge).
 const runFixCharacters = (reprocess = false) => runPanelJob(reprocess ? '/reprocess-characters' : '/fix-characters', 'characters');
+// Apply Tags: the same character pass WITH the dictionary attached, so the server merges tags.
+// Triggered from the Edit Tag Dictionary editor's footer, not the main panel.
+const runApplyTags = (reprocess = false) => runPanelJob(reprocess ? '/reprocess-characters' : '/fix-characters', 'characters', { withDictionary: true });
 const runCompressImages = (reprocess = false) => runPanelJob(reprocess ? '/reprocess-all' : '/compress', 'images');
 
 // ── Editor ─────────────────────────────────────────────────────────────────────
@@ -345,7 +362,7 @@ async function openEditor() {
         const ctx = SillyTavern.getContext();
         const characters = ctx.characters || [];
         const { mapping, removedTags, canonicalCategories, categoryOrder, baseMapping, baseRemovedTags } = await ensureDictionary();
-        openModal(characters, mapping, removedTags, canonicalCategories, categoryOrder, baseMapping, baseRemovedTags, () => runFixCharacters(false));
+        openModal(characters, mapping, removedTags, canonicalCategories, categoryOrder, baseMapping, baseRemovedTags, () => runApplyTags(false));
     } catch (e) {
         console.error(MODULE_NAME, e);
         toastr.error('Failed to open the tag editor. See console.', 'Character Tools');
