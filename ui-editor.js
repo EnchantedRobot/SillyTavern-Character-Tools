@@ -15,8 +15,6 @@
 import { buildBuckets, pickCanonical } from './tag-analysis.js';
 import { saveDictionary, loadBaseDictionary } from './index.js';
 
-const MODULE = '[Character Tools]';
-
 // Live state for the open modal.
 let state = null;       // { groups, unassigned, removed }
 let overlayEl = null;

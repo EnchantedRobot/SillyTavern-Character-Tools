@@ -5,8 +5,9 @@
 *.swp
 *~
 
-# Node (only if tooling is added later)
+# Node
 node_modules/
+coverage/
 
 # Corpus coverage report — generated locally by scripts/build-mapping.py from
 # whatever test corpus is present; pure discovery output, never ground truth.

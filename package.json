@@ -1,0 +1,20 @@
+{
+    "name": "sillytavern-character-tools",
+    "version": "1.0.0",
+    "description": "SillyTavern extension: merge tags, repair cards, and compress images in one pass (companion to SillyTavern-Character-Tools-Server).",
+    "private": true,
+    "type": "module",
+    "scripts": {
+        "lint": "eslint .",
+        "lint:fix": "eslint --fix .",
+        "test": "vitest run",
+        "test:watch": "vitest"
+    },
+    "license": "MIT",
+    "devDependencies": {
+        "@eslint/js": "^9.0.0",
+        "eslint": "^9.0.0",
+        "globals": "^15.0.0",
+        "vitest": "^2.0.0"
+    }
+}

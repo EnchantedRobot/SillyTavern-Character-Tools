@@ -93,7 +93,7 @@ export function pickCanonical(variants) {
     if (!isAllLower && !isAllUpper) return stripped;
 
     return stripped
-        .replace(/[_\-]+/g, ' ')
+        .replace(/[_-]+/g, ' ')
         .replace(/\s+/g, ' ')
         .trim()
         .split(' ')
