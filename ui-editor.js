@@ -1,10 +1,11 @@
 // ui-editor.js
 // Builds the Tag Dictionary editor modal. This is a pure curation surface: it
 // edits the persistent dictionary and saves every change automatically. It does
-// NOT rewrite any cards — applying the dictionary is the server's job, driven
-// from the panel's "Fix Characters" button (which posts the dictionary to
-// /fix-characters). The footer offers a convenience "Fix Characters" button that
-// closes the editor and delegates to that same panel run.
+// NOT rewrite any cards itself — applying the dictionary is the server's job. The
+// footer's "Apply Tags" button closes the editor and runs the character pass WITH
+// the dictionary attached (merge tags + repair + compress). The main panel's "Fix
+// Characters" button runs that same pass WITHOUT the dictionary, so merging tags
+// onto cards happens only from here.
 //
 // The model is a persistent dictionary. The modal shows three lists:
 //   • Canonical tags + the variants that merge into each (the full dictionary).
@@ -24,7 +25,7 @@ let canonicalCategories = {};   // canonical → category name
 let categoryOrder = [];         // category names in dictionary order
 let baseSnapshot = null;        // serialized base dict for dirty-check
 let resetBtnEl = null;
-let onFixCharactersCb = null;   // panel callback: run the full character pass
+let onApplyTagsCb = null;       // panel callback: run the character pass WITH the dictionary (Apply Tags)
 
 // Per-bucket filter text and a single shared selection (one bucket at a time).
 let bucketFilter = { unassigned: '', removed: '' };
@@ -111,13 +112,13 @@ function loadState(mapping, removedTags) {
  * @param {Object<string,string[]>} mapping  persistent canonical -> variants dict
  * @param {string[]} [removedTags]  persistent junk list
  */
-export function openModal(characters, mapping, removedTags, catCategories = {}, catOrder = [], baseMapping = {}, baseRemovedTags = [], onFixCharacters = null) {
+export function openModal(characters, mapping, removedTags, catCategories = {}, catOrder = [], baseMapping = {}, baseRemovedTags = [], onApplyTags = null) {
     closeModal();
     characterList = characters;
     groupSeq = 0;
     canonicalCategories = catCategories;
     categoryOrder = catOrder;
-    onFixCharactersCb = onFixCharacters;
+    onApplyTagsCb = onApplyTags;
     bucketFilter = { unassigned: '', removed: '' };
     selectionBucket = null;
     selected = new Set();
@@ -145,10 +146,10 @@ export function openModal(characters, mapping, removedTags, catCategories = {}, 
     });
 
     const footer = overlayEl.querySelector('.ctm-footer');
-    if (onFixCharactersCb) {
-        const fixBtn = el(`<div id="ctm-fix" class="menu_button" title="Save the dictionary and run the full character pass: merge tags + repair + compress"><i class="fa-solid fa-wand-magic-sparkles"></i>&nbsp;&nbsp;Fix Characters</div>`);
-        fixBtn.addEventListener('click', () => { const cb = onFixCharactersCb; closeModal(); cb(); });
-        footer.appendChild(fixBtn);
+    if (onApplyTagsCb) {
+        const applyBtn = el(`<div id="ctm-apply" class="menu_button" title="Save the dictionary and apply it to your cards: merge tags + repair + compress in one pass"><i class="fa-solid fa-tags"></i>&nbsp;&nbsp;Apply Tags</div>`);
+        applyBtn.addEventListener('click', () => { const cb = onApplyTagsCb; closeModal(); cb(); });
+        footer.appendChild(applyBtn);
     }
     const newGroupBtn = el(`<div class="menu_button" title="Create an empty canonical tag"><i class="fa-solid fa-plus"></i>&nbsp;&nbsp;New canonical</div>`);
     newGroupBtn.addEventListener('click', onNewEmptyGroup);

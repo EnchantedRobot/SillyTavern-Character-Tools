@@ -2,9 +2,9 @@
 
 **Requires the companion server plugin: [SillyTavern-Character-Tools-Server](https://github.com/EnchantedRobot/SillyTavern-Character-Tools-Server)**
 
-A SillyTavern extension that cleans up and slims down your character library in a **single pass** — merging messy tags onto clean canonical ones, repairing/upgrading each character card, and compressing the card image, all in one run per card — plus a sidecar that compresses your gallery images.
+A SillyTavern extension that cleans up and slims down your character library — repairing/upgrading each character card and compressing its image in one pass, plus a dictionary-driven tag merge you apply when you're ready — plus a sidecar that compresses your gallery images.
 
-It consolidates three former projects (Image Compressor, its server plugin, and the Tag Merger) into one suite, so the workflow is one button instead of "run A, run B, re-run A."
+It consolidates three former projects (Image Compressor, its server plugin, and the Tag Merger) into one suite, so the whole workflow lives in one panel instead of "run A, run B, re-run A."
 
 ## Installation
 
@@ -28,13 +28,13 @@ git clone https://github.com/EnchantedRobot/SillyTavern-Character-Tools
 
 Open the **Extensions** panel → **Character Tools**, pick a user from the dropdown (populated from your `data/` directory), then use any of:
 
-- **Fix Characters** — the main action. For every card, the server merges tags, repairs/upgrades the card, and compresses the image in a single pass. A progress bar and log show the run and summarise tags fixed, cards repaired, and space saved.
-- **Edit Tag Dictionary** — curate what merges. A three-list editor (canonical + merged variants, unassigned, removed) where clicking a tag moves it between buckets. Every edit saves automatically; no server restart needed.
+- **Fix Characters** — repair/upgrade every card and compress its image in one pass. It does **not** change tags. A progress bar and log summarise cards repaired and space saved.
+- **Edit Tag Dictionary** — curate what merges, then **Apply Tags** to write it onto your cards. A three-list editor (canonical + merged variants, unassigned, removed) where clicking a tag moves it between buckets; every edit saves automatically. The footer's **Apply Tags** button runs the character pass *with* your dictionary (merge tags + repair + compress); it's idempotent, so re-applying clean cards is a no-op. No server restart needed.
 - **Compress Images** — sidecar that compresses your chat gallery (`user/images/`), independent of the character pass.
 - **Stats** — file counts and sizes for both directories, without changing anything.
 - **Reprocess Characters / Images** — clear the skip-state and re-run from scratch.
 
-> **No undo.** Fixing rewrites the card files on disk. Back up your `characters/` folder first if unsure.
+> **No undo.** Fixing characters or applying tags rewrites the card files on disk. Back up your `characters/` folder first if unsure.
 
 ## Docs
 
