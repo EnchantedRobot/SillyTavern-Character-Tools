@@ -1,0 +1,12 @@
+{
+    "display_name": "Character Tools",
+    "loading_order": 150,
+    "requires": [],
+    "optional": [],
+    "js": "index.js",
+    "css": "style.css",
+    "author": "EnchantedRobot",
+    "version": "1.0.0",
+    "homePage": "https://github.com/EnchantedRobot/SillyTavern-Character-Tools",
+    "auto_update": true
+}

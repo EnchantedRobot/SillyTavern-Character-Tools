@@ -1,0 +1,3217 @@
+{
+  "mapping": {
+    "Genre": {
+      "Romance": [
+        "confession",
+        "contemporary romance",
+        "cupid",
+        "dark romance",
+        "downbadforyou",
+        "dramaandromance",
+        "drunk confession",
+        "falling in love",
+        "feelings realization",
+        "first love",
+        "genuine",
+        "intimate",
+        "love",
+        "love is a battlefield",
+        "loveatfirstfright",
+        "loveconquersall",
+        "lover",
+        "lovesyou",
+        "morning after",
+        "morningafter",
+        "oppositeattract",
+        "opposites attract",
+        "passionate",
+        "possibleromance",
+        "practice kissing",
+        "rom",
+        "romantic",
+        "romantical",
+        "secondchanceinlove",
+        "soulmate",
+        "true love",
+        "unconditional love",
+        "virgin emotions",
+        "yearning"
+      ],
+      "Drama": [
+        "relationshipdrama"
+      ],
+      "Comedy": [
+        "comedic",
+        "dark comedy",
+        "funny",
+        "humor",
+        "humorous",
+        "satire",
+        "silly"
+      ],
+      "Romantic Comedy": [
+        "romanticcomedy",
+        "romcom"
+      ],
+      "Slice of Life": [
+        "casual",
+        "casual conversation",
+        "coffee and conversation",
+        "convenient intimacy",
+        "domestic",
+        "everyday",
+        "grounded",
+        "low maintenance",
+        "slice-of-life",
+        "sliceoflife",
+        "small talk",
+        "sol"
+      ],
+      "Fantasy": [
+        "easternfantasy",
+        "fantasies",
+        "fantastic",
+        "fantasty",
+        "fantasysetting",
+        "gothic fantasy",
+        "high fantasy",
+        "low fantasy",
+        "magic",
+        "magical",
+        "medieval fantasy",
+        "medievalfantasy",
+        "modern fantasy",
+        "modernfantasy",
+        "murim",
+        "prophecy",
+        "urban fantasy",
+        "urbanfantasy",
+        "xianxia"
+      ],
+      "Dark Fantasy": [
+        "darkurbanfantasy"
+      ],
+      "Sci-Fi": [
+        "sci fi",
+        "sci_fi",
+        "science fiction",
+        "scifi"
+      ],
+      "Cyberpunk": [
+        "cyberpunk 2077",
+        "cyberpunk2077"
+      ],
+      "Horror": [
+        "blood and gore",
+        "body horror",
+        "cosmic horror",
+        "cosmichorror",
+        "gore",
+        "gothic",
+        "gothic horror",
+        "morbid",
+        "psychological horror",
+        "scary",
+        "survival horror",
+        "urban horror"
+      ],
+      "Thriller": [
+        "suspense",
+        "thrillerandmystery"
+      ],
+      "Mystery": [
+        "mysteries",
+        "noir"
+      ],
+      "Adventure": [
+        "exploration",
+        "journey",
+        "rescue mission",
+        "survival"
+      ],
+      "Action": [
+        "battle",
+        "chase",
+        "combat",
+        "fight",
+        "fighting",
+        "guns",
+        "violence",
+        "violent",
+        "war"
+      ],
+      "Isekai": [
+        "alternate universe",
+        "gate",
+        "isekaiadventures",
+        "parallel universe",
+        "portal fantasy",
+        "reverse isekai",
+        "reverseisekai"
+      ],
+      "Crime": [
+        "criminal underworld",
+        "murder"
+      ],
+      "Coming of Age": [
+        "coming-of-age"
+      ],
+      "Tragedy": [
+        "death",
+        "dieing",
+        "tradegy",
+        "tragic"
+      ],
+      "Parody": [],
+      "Superhero": [
+        "hero",
+        "speedster",
+        "super hero",
+        "superheroine",
+        "superpower",
+        "superpowers"
+      ],
+      "Steampunk": [
+        "gothic steampunk"
+      ],
+      "Supernatural": [
+        "curse",
+        "cursed",
+        "occult",
+        "paranormal",
+        "supernatural thriller",
+        "tarot"
+      ]
+    },
+    "Tone / Mood": {
+      "Wholesome": [
+        "comfort",
+        "comfy",
+        "cozy",
+        "cozyweek",
+        "cuddles",
+        "cuddling",
+        "healing",
+        "heartwarming",
+        "loveherpls",
+        "surprisingly wholesome",
+        "walkherhome",
+        "wholesomeandsweet"
+      ],
+      "Fluff": [
+        "domestic intimacy",
+        "fluffweek",
+        "fluffy",
+        "gift giving",
+        "giftwrapped",
+        "possiblefluff"
+      ],
+      "Angst": [
+        "breaking",
+        "emotional damage",
+        "emotional erosion",
+        "heavyangst",
+        "heavyangstdrama",
+        "potentialangst"
+      ],
+      "Hurt/Comfort": [
+        "comforther",
+        "comfortsex",
+        "emotional vulnerability",
+        "hugherpls",
+        "hurt-comfort",
+        "hurtcomfort",
+        "traumacomfort",
+        "vulnerability"
+      ],
+      "Dead Dove": [
+        "dark",
+        "notforall",
+        "nsfl",
+        "twisted"
+      ],
+      "Bittersweet": [],
+      "Story Driven": [
+        "character depth",
+        "lore friendly",
+        "plot",
+        "plotheavy",
+        "psychological depth",
+        "storydriven",
+        "storyfocused",
+        "storyheavy",
+        "worldbuilding"
+      ]
+    },
+    "Setting / Era": {
+      "Modern Day": [
+        "city",
+        "modern",
+        "modernday",
+        "present",
+        "real world",
+        "real-world",
+        "realism",
+        "realistic"
+      ],
+      "Historical": [
+        "1870s",
+        "1950s",
+        "coldwarera",
+        "colonization",
+        "historical/ancient",
+        "history",
+        "regency era",
+        "renaissance",
+        "retro",
+        "victorian"
+      ],
+      "Medieval": [
+        "medievalrpg"
+      ],
+      "Ancient": [
+        "ancientgreece",
+        "rome",
+        "sparta"
+      ],
+      "Feudal Japan": [],
+      "Post-Apocalyptic": [
+        "apocalypse",
+        "post apocalyptic",
+        "post-apocalypse",
+        "postapocalpytic",
+        "postapocalyptic",
+        "zombie apocalypse",
+        "zombieapocalypse"
+      ],
+      "Dystopia": [
+        "dystopian"
+      ],
+      "Space": [
+        "astronaut",
+        "military scifi",
+        "outer space",
+        "space adventure",
+        "space girl",
+        "space opera",
+        "space pirate",
+        "spaceadventure",
+        "spaceship",
+        "starship"
+      ],
+      "Western": [
+        "cowboy/cowgirl",
+        "cowgirl",
+        "frontier",
+        "gold rush",
+        "weird west",
+        "weirdwest",
+        "wild west"
+      ],
+      "School": [
+        "academy",
+        "cafeteria",
+        "high school",
+        "highschool",
+        "highschool reunion",
+        "highschooldrama",
+        "kouhai",
+        "reunion",
+        "schoolgirl",
+        "student council",
+        "studentcouncil"
+      ],
+      "College": [
+        "academia",
+        "campus life",
+        "college dorm",
+        "college girl",
+        "college life",
+        "college student",
+        "collegelife",
+        "collegestudent",
+        "dorm",
+        "dormitory",
+        "english major",
+        "hazing",
+        "sorority girl",
+        "uni",
+        "university",
+        "university student"
+      ],
+      "Workplace": [
+        "corporate cruelty",
+        "office",
+        "office drama",
+        "office setting"
+      ],
+      "Small Town": [
+        "countryside",
+        "smalltowngirl",
+        "suburban",
+        "suburbs",
+        "village"
+      ],
+      "Rural": [
+        "cottagecore",
+        "country girl",
+        "farm",
+        "farm girl",
+        "farm/ranch/homestead",
+        "farmer",
+        "farmer/farmhand",
+        "farmergirl",
+        "outdoors",
+        "peasant",
+        "southerngirl"
+      ],
+      "Magic Academy": [
+        "magicacademy",
+        "magical academy",
+        "magicalacademy"
+      ],
+      "Vacation": [
+        "amusement park",
+        "beach",
+        "cabin",
+        "cabin beach weekend",
+        "camping",
+        "campingtrip",
+        "holiday",
+        "hot spring",
+        "island",
+        "oceanvibes",
+        "onsen",
+        "remote cabin",
+        "road trip",
+        "site seeing",
+        "spa",
+        "summer",
+        "summervibes",
+        "tahiti",
+        "theme park",
+        "tourist",
+        "travel",
+        "waterfun",
+        "waterpark",
+        "wilderness"
+      ],
+      "Colony": [
+        "colonists"
+      ]
+    },
+    "Species / Non-Human": {
+      "Human": [],
+      "Demi-Human": [
+        "animal ears",
+        "animal girl",
+        "axolotlchar",
+        "beargirl",
+        "beastkin",
+        "demihuman",
+        "ferretgirl",
+        "fluffy tail",
+        "horns",
+        "hybriddemihuman",
+        "kemonomimi",
+        "lynx girl",
+        "mothgirl",
+        "mousegirl",
+        "ottergirl",
+        "owlgirl",
+        "sheep girl",
+        "tail",
+        "tails"
+      ],
+      "Non-Human": [
+        "anthropomorphic",
+        "chimera",
+        "demihumanuser",
+        "halfbreed",
+        "humanoid",
+        "interspecies",
+        "living doll",
+        "monster",
+        "monsters",
+        "mutant",
+        "nonhuman character",
+        "nonhuman protagonist",
+        "parasite"
+      ],
+      "Monster Girl": [
+        "bear girl",
+        "cow udders",
+        "cow-girl",
+        "deer girl",
+        "goatgirl",
+        "goblin girl",
+        "gremlin",
+        "horse girl",
+        "monstergirl",
+        "sharkgirl",
+        "sheep",
+        "sheepgirl",
+        "sheepkin",
+        "snake girl",
+        "wildgirl"
+      ],
+      "Cat Girl": [
+        "cat ears and cat tail",
+        "catgirl",
+        "cheetahgirl",
+        "magiccat",
+        "neko",
+        "nekomimi",
+        "orange tabby",
+        "panthergirl",
+        "tigergirl"
+      ],
+      "Fox Girl": [
+        "fox",
+        "foxgirl",
+        "gumiho",
+        "kitsune"
+      ],
+      "Wolf Girl": [
+        "wolf",
+        "wolfgirl"
+      ],
+      "Dog Girl": [
+        "doggirl",
+        "goldenretriever",
+        "labradorretrievergirl"
+      ],
+      "Bunny Girl": [
+        "bunny",
+        "bunny suit",
+        "bunnygirl",
+        "bunnygirloutfit",
+        "rabbit anthro",
+        "rabbit girl",
+        "rabbitgirl"
+      ],
+      "Elf": [
+        "elf princess",
+        "elfmommy",
+        "elves",
+        "half-elf",
+        "high elf",
+        "sand elf"
+      ],
+      "Dark Elf": [
+        "darkelf",
+        "drow"
+      ],
+      "Demon": [
+        "demon girl",
+        "demon lord",
+        "demon summoning",
+        "demonic",
+        "demonqueen",
+        "demons",
+        "oni"
+      ],
+      "Succubus": [
+        "succubus summons"
+      ],
+      "Vampire": [
+        "vampires"
+      ],
+      "Angel": [
+        "fallen angel",
+        "guardian angel"
+      ],
+      "Goddess": [
+        "banished goddess",
+        "deity",
+        "deity / god / goddess",
+        "demigod",
+        "divine",
+        "divinity",
+        "goddesbot",
+        "godtier"
+      ],
+      "Robot": [
+        "android",
+        "artificial intelligence",
+        "artificialinteligence",
+        "cyborg",
+        "hologram",
+        "holographic",
+        "mech pilot",
+        "mecha",
+        "robot girl",
+        "sentience"
+      ],
+      "Alien": [
+        "alien girl"
+      ],
+      "Mermaid": [],
+      "Dragon": [
+        "dragon girl",
+        "dragonborn",
+        "dragongirl"
+      ],
+      "Ghost": [
+        "ghost girl",
+        "haunted",
+        "incorporeal",
+        "possession",
+        "spirit possession"
+      ],
+      "Slime Girl": [
+        "slime",
+        "slimegirl"
+      ],
+      "Lamia": [
+        "gorgon"
+      ],
+      "Furry": [
+        "anthro",
+        "anthro days",
+        "anthropomorphic animals"
+      ],
+      "Undead": [
+        "zombie",
+        "zombie girl"
+      ],
+      "Fairy": [
+        "dryad",
+        "faerie",
+        "nymph",
+        "pixie",
+        "sprite"
+      ],
+      "Tiefling": [],
+      "Spirit": [
+        "celestial",
+        "folklore entity",
+        "shinigami"
+      ],
+      "Orc": [
+        "goblin"
+      ],
+      "Werewolf": [
+        "wolfwife"
+      ],
+      "Dwarf": [],
+      "Giant": [
+        "giantuser"
+      ],
+      "Genie": [
+        "wish granting"
+      ],
+      "Gnome": [],
+      "Elemental": [
+        "esper",
+        "fire",
+        "shadow"
+      ]
+    },
+    "Ethnicity / Culture": {
+      "Asian": [
+        "asian female",
+        "asian supermodel",
+        "asian themed",
+        "east asian",
+        "filipina",
+        "filipino",
+        "south asian",
+        "thai"
+      ],
+      "Japanese": [
+        "japan",
+        "japanese setting",
+        "kimono"
+      ],
+      "Korean": [
+        "korea",
+        "south korea"
+      ],
+      "Chinese": [
+        "china"
+      ],
+      "Latina": [
+        "hispanic"
+      ],
+      "Black": [
+        "african american",
+        "african-american",
+        "ebony"
+      ],
+      "White": [
+        "caucasian",
+        "white girl",
+        "white woman"
+      ],
+      "Indian": [
+        "bollywood"
+      ],
+      "Middle Eastern": [
+        "arabian",
+        "egyptian"
+      ],
+      "Native American": [
+        "aztec",
+        "indigenous",
+        "mesoamerican",
+        "native",
+        "tribal"
+      ],
+      "Slavic": [
+        "gopnik",
+        "russian"
+      ],
+      "European": [
+        "british",
+        "english",
+        "europe",
+        "france",
+        "french",
+        "german",
+        "irish",
+        "italian",
+        "norwegian",
+        "scottish",
+        "swedish"
+      ],
+      "Romani": [
+        "gypsies",
+        "gypsy",
+        "roma"
+      ],
+      "Oceanian": [
+        "australian"
+      ]
+    },
+    "Personality / Archetype": {
+      "Tsundere": [
+        "tsundere (kind of)",
+        "tsunderetoyandere",
+        "yanderetsunderehybrid"
+      ],
+      "Yandere": [
+        "shemightkillyou",
+        "slight yandere",
+        "soft yandere"
+      ],
+      "Kuudere": [],
+      "Dandere": [],
+      "Brat": [
+        "brat taming",
+        "bratt",
+        "brattaming",
+        "bratty",
+        "himedere",
+        "spoiled brat"
+      ],
+      "Shy": [
+        "awkward",
+        "introvert",
+        "introverted",
+        "nervous",
+        "quiet",
+        "quietgirl",
+        "repressed",
+        "reserved",
+        "sociallyawkward",
+        "timid"
+      ],
+      "Cold": [
+        "cold anger",
+        "deadpan",
+        "emotionless",
+        "icequeen",
+        "kakkodere"
+      ],
+      "Aloof": [],
+      "Cheerful": [
+        "bubbly",
+        "genki",
+        "perky"
+      ],
+      "Energetic": [
+        "adrenaline junkie",
+        "enthusiastic",
+        "hyper",
+        "hyperactive",
+        "manic"
+      ],
+      "Playful": [
+        "goofy",
+        "mischevious",
+        "mischievous",
+        "quirky",
+        "trickster"
+      ],
+      "Flirty": [
+        "flirtatious",
+        "tease",
+        "teasing",
+        "teasingchar"
+      ],
+      "Seductive": [
+        "lewd",
+        "sultry"
+      ],
+      "Possessive": [
+        "keepyourhandsoff",
+        "obsessed",
+        "obsessive"
+      ],
+      "Jealous": [
+        "jealouswife",
+        "jealousy",
+        "jelousy"
+      ],
+      "Stoic": [],
+      "Sarcastic": [
+        "banter",
+        "deflection",
+        "sassy",
+        "smart-assy",
+        "smartassy",
+        "smug",
+        "snarky"
+      ],
+      "Kind": [
+        "actuallysweet",
+        "deredere",
+        "devoted",
+        "friendly",
+        "friendlygirl",
+        "gentle",
+        "helpful",
+        "loving",
+        "lowksweet",
+        "nicegirl",
+        "shesweetfr",
+        "soft",
+        "sweet",
+        "sweetheart"
+      ],
+      "Caring": [
+        "affectionate",
+        "caregiver",
+        "caretaker",
+        "motherly",
+        "nurturing",
+        "shewillpamperyou"
+      ],
+      "Protective": [
+        "protectheratallcosts",
+        "strongbutgentle"
+      ],
+      "Loyal": [],
+      "Insecure": [
+        "crybaby",
+        "low self esteem",
+        "low self-esteem",
+        "self-conscious",
+        "selfconsciouschar",
+        "vulnerable"
+      ],
+      "Clingy": [
+        "attachment",
+        "clingly",
+        "clingy girl",
+        "needy",
+        "needy_clingy",
+        "needyandclingy"
+      ],
+      "Tomboy": [
+        "muscular tomboy",
+        "nicetomboyromance",
+        "tomboygirlfriend",
+        "tomboyish",
+        "toned tomboy"
+      ],
+      "Nerd": [
+        "bookish",
+        "bookworm",
+        "dork",
+        "dorky",
+        "geek",
+        "hot nerd",
+        "nerd girl",
+        "nerd virgin",
+        "nerdgirl",
+        "nerdy",
+        "otaku",
+        "weeaboo",
+        "weeb"
+      ],
+      "Bimbo": [
+        "airhead",
+        "bakadere",
+        "bimbo/himbo",
+        "ditzy",
+        "dumb",
+        "dumb bimbo",
+        "dumbass",
+        "dumbchar",
+        "dummy",
+        "gal",
+        "gyaru",
+        "intelligent bimbo",
+        "nobrain",
+        "stupid"
+      ],
+      "Mean": [
+        "baddie",
+        "bitchy",
+        "brash",
+        "chav",
+        "cocky",
+        "diva",
+        "greedy",
+        "hateful",
+        "hatesyou",
+        "haughty",
+        "kamidere",
+        "karen",
+        "mean girl",
+        "mean/catty",
+        "mean_catty",
+        "meangirl",
+        "queen bee",
+        "queenbee",
+        "queenbeeweek",
+        "rude"
+      ],
+      "Manipulative": [
+        "blackmail",
+        "deception",
+        "emotional manipulation",
+        "gaslighting",
+        "manipulatedchar",
+        "manipulation",
+        "manipulativebutcute"
+      ],
+      "Cunning": [
+        "savvy",
+        "scheming",
+        "sneaky"
+      ],
+      "Innocent": [
+        "clueless",
+        "cute and innocent",
+        "fakeinnocent",
+        "gullible",
+        "innocence",
+        "innocenceweek",
+        "innocentpure",
+        "naive",
+        "oblivious",
+        "pure",
+        "sheltered"
+      ],
+      "Clumsy": [
+        "klutz",
+        "klutzy"
+      ],
+      "Lazy": [],
+      "Crazy": [
+        "batshitcrazy",
+        "insane",
+        "psychopath",
+        "sociopath",
+        "unhinged",
+        "unstable"
+      ],
+      "Lonely": [
+        "isolated",
+        "isolation",
+        "lonerchar",
+        "touch starvation",
+        "touch starved",
+        "touch-starved",
+        "touchedstarved"
+      ],
+      "Pushover": [
+        "damselindistress",
+        "doormat",
+        "people pleaser"
+      ],
+      "Pervert": [
+        "degenerate",
+        "filthy",
+        "freak",
+        "goon",
+        "gooner",
+        "goonette",
+        "gooning",
+        "perverted",
+        "secret slut",
+        "secretly horny",
+        "shameless"
+      ],
+      "Goth": [
+        "emo",
+        "goth girl",
+        "gothgirl",
+        "gothicbaddie",
+        "mall goth",
+        "scene girl"
+      ],
+      "Punk": [
+        "heavy metal",
+        "metalhead",
+        "punkrock",
+        "punkrocker"
+      ],
+      "Stoner": [
+        "pothead",
+        "smoker",
+        "vape smoker",
+        "weed"
+      ],
+      "Villain": [
+        "antagonist",
+        "corrupt",
+        "evil",
+        "supervillain",
+        "tragic villain",
+        "villain protagonist",
+        "villainess"
+      ],
+      "Rich": [
+        "chaebol",
+        "heiress",
+        "ojou-sama",
+        "rich girl",
+        "richgirl",
+        "richkid",
+        "southernbelle",
+        "wealthy"
+      ],
+      "Loser": [
+        "femcel",
+        "girl failure",
+        "girlfailure",
+        "hikikomori",
+        "hotmess",
+        "incel",
+        "incel/femcel",
+        "neet",
+        "neet girl",
+        "norizz",
+        "popularxloser",
+        "unpopularuser"
+      ],
+      "Cosplay": [
+        "cosplayer"
+      ],
+      "Delinquent": [
+        "delinquentxgoodgirl",
+        "deliquentuser",
+        "troublemaker"
+      ],
+      "Hippie": [],
+      "Prude": [],
+      "Morally Gray": [
+        "anti hero",
+        "anti-hero",
+        "conflictedchar",
+        "morallygray"
+      ],
+      "Cutie": [
+        "cutiealert"
+      ]
+    },
+    "Relationship / Role": {
+      "Girlfriend": [
+        "college girlfriend",
+        "exgirlfriend",
+        "first girlfriend",
+        "girlfriendchar",
+        "loving girlfriend",
+        "sons girlfriend",
+        "sonsgirlfriend"
+      ],
+      "Wife": [
+        "badwife",
+        "ex-wife",
+        "exwife",
+        "fallingmarriage",
+        "housespouse",
+        "housewife",
+        "loving wife",
+        "married woman",
+        "messybreakup",
+        "neglected wife",
+        "trad wife"
+      ],
+      "Childhood Friend": [
+        "childhood best friend",
+        "childhoodbestfriend",
+        "childhoodfriend"
+      ],
+      "Best Friend": [
+        "bestfriend",
+        "bff"
+      ],
+      "Friend": [
+        "friendssister",
+        "platonic",
+        "sistersfriend",
+        "SistersFriend",
+        "wifesfriend"
+      ],
+      "Friends to Lovers": [
+        "childhood friends to lovers",
+        "friendstolover",
+        "friendstolovers"
+      ],
+      "Enemies to Lovers": [
+        "enemies",
+        "enemy",
+        "rival",
+        "rivalry",
+        "rivals"
+      ],
+      "Friends with Benefits": [
+        "casual encounters",
+        "enemies with benefits",
+        "enemieswithbenefits",
+        "friendswithbenefits",
+        "friendwithbenefits",
+        "fuckbuddies",
+        "fwb",
+        "mutualbenefit"
+      ],
+      "Stranger": [
+        "chance meeting",
+        "meeting",
+        "random encounter",
+        "strangerstolovers",
+        "strangerstomore"
+      ],
+      "Roommate": [
+        "cohabitation",
+        "flatmate",
+        "flatsharing",
+        "housemate",
+        "live-in relationship",
+        "newroommate",
+        "roomate"
+      ],
+      "Neighbor": [
+        "girlnextdoor",
+        "neigbor",
+        "neighborchar",
+        "neighbour",
+        "person next door"
+      ],
+      "Coworker": [
+        "colleague",
+        "office girl",
+        "office lady",
+        "workwife"
+      ],
+      "Classmate": [
+        "classmatechar",
+        "schoolmate"
+      ],
+      "Boss": [],
+      "Teacher": [
+        "mentor",
+        "professor",
+        "professoruser",
+        "professorxstudent",
+        "tutor",
+        "virgin teacher"
+      ],
+      "Student": [
+        "exchange student",
+        "foreign exchange",
+        "foreign exchange student",
+        "trainee"
+      ],
+      "Mother": [
+        "adoptivemom",
+        "aftermotherhood",
+        "mama",
+        "milf mom",
+        "mom",
+        "mommy",
+        "mother and daughter",
+        "mother and son",
+        "surrogatemother"
+      ],
+      "Stepmother": [
+        "step mom",
+        "step mother",
+        "stepmom"
+      ],
+      "Sister": [
+        "big sister",
+        "imouto",
+        "little sister",
+        "older sister",
+        "oldersister",
+        "sis",
+        "younger sister",
+        "youngersister"
+      ],
+      "Stepsister": [
+        "step sister",
+        "step-sibling",
+        "stepsibling",
+        "stepsis"
+      ],
+      "Daughter": [
+        "step daughter",
+        "stepdaughter"
+      ],
+      "Aunt": [],
+      "Milf": [
+        "girlfriend's mom",
+        "girlfriendsmom",
+        "mature",
+        "milfmonth"
+      ],
+      "Single Mother": [
+        "single mom",
+        "singlemom"
+      ],
+      "Married": [
+        "marriage",
+        "married couple",
+        "married life",
+        "marriedlife",
+        "spouse",
+        "wedding ring"
+      ],
+      "Arranged Marriage": [
+        "arranged relationship",
+        "arrangeddate",
+        "arrangedmariage",
+        "arrangedmarriage",
+        "contractual relationship",
+        "forced marriage",
+        "forcedmarriage"
+      ],
+      "Slow Burn": [
+        "lingering",
+        "mutual pining",
+        "patience",
+        "slow burn escalation",
+        "slow burn rescue",
+        "slow-burn",
+        "slowburn",
+        "slowburnromance",
+        "waiting"
+      ],
+      "Forbidden Romance": [
+        "forbidden",
+        "forbidden desire",
+        "forbidden love",
+        "forbiddenromance",
+        "taboo"
+      ],
+      "Love Triangle": [
+        "lovetriangle"
+      ],
+      "Royalty": [
+        "nobility",
+        "noble",
+        "noblerights",
+        "noblewoman",
+        "prince",
+        "princess",
+        "queen",
+        "royal",
+        "royalweek",
+        "runawayprincess"
+      ],
+      "Maid": [],
+      "Nun": [
+        "priestess",
+        "priestessnun",
+        "shrine maiden"
+      ],
+      "Idol": [
+        "former idol",
+        "idol manager",
+        "idolxbodyguard",
+        "j-pop",
+        "jpop",
+        "k-pop",
+        "k-pop idol",
+        "kpop",
+        "kpop idol",
+        "kpopidol",
+        "pop idol",
+        "popstar",
+        "rockstar",
+        "songaloid",
+        "virtual idol"
+      ],
+      "Streamer": [
+        "content creator",
+        "instagram",
+        "livestreamer",
+        "onlyfans",
+        "twitch streamer",
+        "twitchstreamer",
+        "vtuber",
+        "vtuberchar",
+        "youtuber"
+      ],
+      "Celebrity": [
+        "celebchar",
+        "e-girl",
+        "egirl",
+        "fame",
+        "famous",
+        "famouschar",
+        "influencer",
+        "internet celebrities",
+        "internet famous",
+        "itgirl",
+        "popular",
+        "popular girl",
+        "popularchar",
+        "populargirl"
+      ],
+      "Fiancee": [
+        "bride",
+        "engaged"
+      ],
+      "Widow": [
+        "widowed"
+      ],
+      "Bully": [
+        "bullied",
+        "bulliedchar",
+        "bulluser",
+        "bully victim",
+        "bullyboyfriend",
+        "bullying",
+        "bullyuser",
+        "childhood bully",
+        "exbully",
+        "female bully",
+        "formerbully"
+      ],
+      "Babysitter": [],
+      "Landlord": [
+        "landlord and tenant"
+      ],
+      "Tenant": [
+        "freeloader"
+      ],
+      "Sugar Daddy": [],
+      "Sugar Mommy": [
+        "sugarmommy"
+      ],
+      "Age Gap": [
+        "age difference",
+        "agedifference",
+        "agegap",
+        "older female"
+      ],
+      "Fake Dating": [
+        "fake relationship",
+        "fakedate",
+        "fakedating",
+        "fakegirlfriend"
+      ],
+      "Friends to Enemies": [
+        "lovers to enemies",
+        "loverstoenemies"
+      ],
+      "Father": [
+        "dad",
+        "dad and son",
+        "daddy",
+        "daughterandfather",
+        "father and daughter",
+        "father-daughter",
+        "gangster-dad"
+      ],
+      "Family": [
+        "adoption",
+        "familyissues",
+        "familyreunion",
+        "familyviolence",
+        "found family",
+        "granddaughter",
+        "niece",
+        "sibling"
+      ],
+      "Cousin": [],
+      "Dating": [
+        "blind date",
+        "blinddate",
+        "catfish",
+        "date",
+        "dating app",
+        "dating sim",
+        "dating simulator",
+        "double date",
+        "hookup",
+        "hookup app",
+        "love interest",
+        "meet-cute",
+        "new relationship",
+        "newrelationship",
+        "situationship",
+        "somethingmore",
+        "speed dating",
+        "speeddating",
+        "the perfect match",
+        "tinder",
+        "tinder match"
+      ],
+      "Unrequited Love": [
+        "closetedcrush",
+        "crush",
+        "fangirl",
+        "friendzone",
+        "friendzoned",
+        "hidden desire",
+        "hiddenfeelings",
+        "innocent flirting",
+        "secret crush",
+        "secretattraction",
+        "secretcrush",
+        "shecrushing",
+        "unrequitedlove"
+      ],
+      "Long Distance": [
+        "online relationship"
+      ],
+      "Ex-Girlfriend": [
+        "ex girlfriend",
+        "exgirlfriends",
+        "exgirlfriendssister"
+      ],
+      "Companion": [
+        "assistant",
+        "helper",
+        "helpers",
+        "rpg companion",
+        "wingwoman"
+      ]
+    },
+    "Age": {
+      "Age Defined": [
+        "legal teen",
+        "loli",
+        "shota",
+        "teen",
+        "teenager",
+        "toddler",
+        "underage",
+        "young",
+        "young adult",
+        "young adult female",
+        "young adult girl",
+        "young adult woman",
+        "youngeruser",
+        "zoomer"
+      ]
+    },
+    "Gender": {
+      "Female": [
+        "female character",
+        "female protagonist",
+        "females",
+        "gender: female",
+        "girl",
+        "girls",
+        "woman",
+        "women"
+      ],
+      "Male": [
+        "gender: male",
+        "male character",
+        "male protagonist",
+        "males",
+        "man",
+        "men"
+      ]
+    },
+    "Cast": {
+      "Multiple Characters": [
+        "doylesisters",
+        "ensemble",
+        "ensemble cast",
+        "group chat",
+        "groupchat",
+        "multiple",
+        "multiple protagonists"
+      ]
+    },
+    "Sexuality": {
+      "Gay": [],
+      "Lesbian": [
+        "lesbian (w4w)",
+        "lesbian cheating",
+        "wlw"
+      ],
+      "Bisexual": [
+        "bi",
+        "pansexual"
+      ],
+      "Asexual": [
+        "ace",
+        "aromantic"
+      ]
+    },
+    "Activity": {
+      "Sports": [
+        "athlete",
+        "athletic",
+        "basketball",
+        "boxer",
+        "boxing",
+        "cheerleader",
+        "cheerleaders",
+        "climbing",
+        "college cheerleader",
+        "competitive",
+        "figure skater",
+        "firstdayatthegym",
+        "fitness",
+        "gym",
+        "gymnast",
+        "gymnast girl",
+        "gymnastics",
+        "hiking",
+        "jock",
+        "racer",
+        "racing",
+        "rollerderby",
+        "sport",
+        "sportgirl",
+        "sporty",
+        "surfer",
+        "surfing",
+        "swimmer",
+        "trackstar",
+        "volleyball",
+        "workout",
+        "wrestling",
+        "yoga"
+      ],
+      "Gaming": [
+        "anime game characters",
+        "fighting game",
+        "game",
+        "game characters",
+        "game show",
+        "gamer",
+        "gamer girl",
+        "gamergirl",
+        "games",
+        "open world",
+        "otome",
+        "rpg",
+        "spinner",
+        "tabletop",
+        "video game",
+        "video games",
+        "videogame",
+        "vr",
+        "vrmmo"
+      ],
+      "Music": [
+        "band",
+        "dancer",
+        "musician",
+        "musicianchar",
+        "rapper",
+        "singer",
+        "song references",
+        "soundcloud"
+      ],
+      "Nightlife": [
+        "bar",
+        "club",
+        "clubbing",
+        "disco",
+        "festival",
+        "gala",
+        "night out",
+        "nightclub",
+        "party",
+        "party girl",
+        "party scene",
+        "party/festival",
+        "partygirl",
+        "partying",
+        "partyscene",
+        "pub",
+        "rave"
+      ],
+      "Gambling": [
+        "bet",
+        "casino",
+        "debt",
+        "high stakes",
+        "poker"
+      ]
+    },
+    "Holiday": {
+      "Christmas": [
+        "2025christmas",
+        "christmas2024",
+        "xmas"
+      ],
+      "Halloween": [
+        "halloween2024",
+        "spooktober"
+      ],
+      "Valentine's Day": [
+        "thevalentine",
+        "valentine",
+        "valentine2025",
+        "valentines",
+        "valentines day",
+        "valentinesday"
+      ],
+      "Easter": [
+        "easter bunny",
+        "easter egg",
+        "easter eggs",
+        "easterbunny",
+        "easteregg",
+        "eastereggs"
+      ],
+      "Birthday": [
+        "bday"
+      ],
+      "Wedding": []
+    },
+    "Content Rating": {
+      "SFW": [
+        "safe for work"
+      ],
+      "NSFW": [
+        "anal",
+        "blowjob",
+        "blowjobs",
+        "casual sex",
+        "caught",
+        "caught masturbating",
+        "dirty",
+        "erotic",
+        "erotica",
+        "exploration of sexuality",
+        "fantasysmut",
+        "first time",
+        "freakinthesheets",
+        "horny",
+        "hornybum",
+        "kindofsmut",
+        "kinky",
+        "lewd content",
+        "lust",
+        "masturbation",
+        "moaning",
+        "oral",
+        "sex",
+        "sex positive",
+        "sex with strangers",
+        "sexual tension",
+        "smut",
+        "smut 🔥❤",
+        "smutbait",
+        "smutifuserwants",
+        "temptation",
+        "xrated21orabove"
+      ],
+      "Can Be Wholesome, Can Be Sexy": [
+        "can be sexy",
+        "can be wholesome",
+        "can be wholesome can be sexy",
+        "canbesmutflufforangst",
+        "sfw &lt;-&gt; nsfw",
+        "sfw <-> nsfw"
+      ]
+    },
+    "NSFW Theme / Kink": {
+      "NTR": [
+        "avoidablentr",
+        "consensualntr",
+        "corruption ntr",
+        "double netori",
+        "fakentr",
+        "fuckntr",
+        "hardntr",
+        "netorare",
+        "ntr avoidable",
+        "ntr cheating wife",
+        "ntr crusade",
+        "ntr-adjacent",
+        "ntrbait",
+        "optionalntr",
+        "possible ntr",
+        "possiblentr",
+        "post-ntr",
+        "postntr",
+        "potentialntr",
+        "prentr",
+        "reversentr",
+        "unavoidablentr"
+      ],
+      "Anti-NTR": [
+        "antintr",
+        "no-ntr",
+        "nonntr",
+        "nontr",
+        "notntr",
+        "ntrbutnotreally"
+      ],
+      "Netori": [
+        "optionalnetori",
+        "stealinggf"
+      ],
+      "Netorase": [
+        "nts"
+      ],
+      "Cheating": [
+        "affair",
+        "cheateruser",
+        "cheating wife",
+        "emotional cheating",
+        "emotionalcheating",
+        "impliedcheating",
+        "infidelity",
+        "kindacheating",
+        "possiblecheating",
+        "sleptwith"
+      ],
+      "Harem": [
+        "multiple girls"
+      ],
+      "BDSM": [
+        "aftercare",
+        "consensual power exchange",
+        "permission"
+      ],
+      "Dominant": [
+        "dom",
+        "dommy",
+        "gentledom",
+        "ownsyou",
+        "servicetop",
+        "soft dom"
+      ],
+      "Submissive": [
+        "bottom",
+        "forced submission",
+        "healslut",
+        "reluctant submission",
+        "soft submissive",
+        "sub",
+        "submissive female"
+      ],
+      "Switch": [
+        "dominant <-> submissive"
+      ],
+      "Bondage": [
+        "magical bondage",
+        "restraints",
+        "rope bunny",
+        "shibari"
+      ],
+      "Free Use": [
+        "freeuse",
+        "freeusegirl",
+        "freeuseworld"
+      ],
+      "Exhibitionism": [
+        "accidentalnudity",
+        "casual nudity",
+        "exhibitionist",
+        "nudist",
+        "public",
+        "public nudity",
+        "publichumiliation"
+      ],
+      "Voyeurism": [
+        "vouyerism",
+        "voyeur"
+      ],
+      "Pregnancy": [
+        "abortion",
+        "breast feeding",
+        "breastfeeding",
+        "impregnation",
+        "lactation",
+        "pragnent",
+        "pregananant",
+        "pregant",
+        "pregegnant",
+        "preggo",
+        "pregnant",
+        "pregonant",
+        "pregweek"
+      ],
+      "Corruption": [
+        "corrupted",
+        "corruptible",
+        "corruptyourfriend",
+        "slow corruption"
+      ],
+      "Mind Control": [
+        "brainwashed",
+        "brainwashing",
+        "magical control",
+        "mind break",
+        "mind games",
+        "mindbreak"
+      ],
+      "Hypnosis": [
+        "hypnosisapp",
+        "hypnotism",
+        "hypnotist",
+        "hypnotized"
+      ],
+      "Non-Con": [
+        "assault",
+        "avoidablesa",
+        "extremenoncon",
+        "made for rape",
+        "noncon",
+        "noncon/dubcon",
+        "nonconsensual",
+        "rape",
+        "rape fantasy",
+        "rape victim",
+        "reverse rape",
+        "sexual assault",
+        "sexual harassment",
+        "sexual predator"
+      ],
+      "Dubcon": [
+        "cnc",
+        "cncpossible",
+        "coercion",
+        "coersion",
+        "dub-con"
+      ],
+      "Sex Work": [
+        "brothel",
+        "concubine",
+        "hooker",
+        "pimp",
+        "porn",
+        "porn studio",
+        "pornography",
+        "prostitute",
+        "prostitution",
+        "sex industry",
+        "sex worker",
+        "sexworker",
+        "street hooker",
+        "whore"
+      ],
+      "Slavery": [
+        "hostage",
+        "indentured",
+        "master-servant",
+        "owned",
+        "owner",
+        "ownership",
+        "servant",
+        "sex slave",
+        "sex slavery",
+        "slave",
+        "slave girl",
+        "slavechar",
+        "slaveuser",
+        "trafficked"
+      ],
+      "Cuckold": [
+        "bullpov",
+        "cuck",
+        "cuckolding",
+        "cuckquean",
+        "hotwife"
+      ],
+      "Futanari": [
+        "futa"
+      ],
+      "Public Sex": [
+        "stealth sex"
+      ],
+      "Rough Sex": [
+        "hate sex",
+        "hatesex",
+        "hatesexkinda",
+        "rough"
+      ],
+      "Virgin": [
+        "inexperienced",
+        "kissless virgin",
+        "virginity"
+      ],
+      "Nympho": [
+        "hypersexuality",
+        "nymphomaniac",
+        "promiscuous",
+        "sex addict",
+        "slut",
+        "slutty"
+      ],
+      "Praise Kink": [],
+      "Degradation": [
+        "cumslut",
+        "degradationkink",
+        "degrading",
+        "degredation",
+        "humiliation",
+        "objectification"
+      ],
+      "Group Sex": [
+        "foursome",
+        "groupsex",
+        "orgy",
+        "threesome"
+      ],
+      "Gangbang": [
+        "gangbangs",
+        "gangrape"
+      ],
+      "Gender Bender": [
+        "gendebent",
+        "genderbend",
+        "genderbent",
+        "genderswap",
+        "multiple genders",
+        "tomgirl"
+      ],
+      "Femboy": [
+        "femboynpc",
+        "trap"
+      ],
+      "Transformation": [
+        "human transformation"
+      ],
+      "Sex Toys": [
+        "dildo",
+        "sex toy",
+        "sextoy",
+        "toys"
+      ],
+      "Sexting": [],
+      "Vanilla": [],
+      "Polyamory": [
+        "poly",
+        "polyamarous",
+        "polyamorous",
+        "polyamorous relationship",
+        "polyamorous relationships"
+      ],
+      "Open Relationship": [
+        "open marriage",
+        "openmarriage",
+        "openrelationship"
+      ],
+      "Swingers": [
+        "swinging",
+        "wife sharing"
+      ],
+      "Incest": [
+        "brother x sister",
+        "oyakodon",
+        "step incest",
+        "stepcest",
+        "twincest"
+      ],
+      "Fetish": [
+        "accidental sex",
+        "age play",
+        "anal fixation",
+        "anal virginity",
+        "aphrodisiac",
+        "armpit",
+        "ass worship",
+        "beastiality",
+        "begging",
+        "bestiality",
+        "bimbofication",
+        "blood play",
+        "bloodplay",
+        "body betrayal",
+        "body odor",
+        "body worship",
+        "breath play",
+        "bromidrophilia",
+        "bukkake",
+        "chastity",
+        "chikan",
+        "cock addict",
+        "cock worship",
+        "control kink",
+        "couch sex",
+        "cum addict",
+        "cum play",
+        "cumdump",
+        "cumfetish",
+        "cunt torture",
+        "ddlg",
+        "denial",
+        "detailed kinks",
+        "dollification",
+        "edging",
+        "enf",
+        "face sitting",
+        "feminization",
+        "fingering",
+        "foulmouthedinbed",
+        "glory hole",
+        "gloryhole",
+        "guided masturbation",
+        "guilt kink",
+        "hair kink",
+        "inanimatetf",
+        "kitchen sex",
+        "medical kink",
+        "non-human genitalia",
+        "oral fixation",
+        "oral sex",
+        "oralfixation",
+        "orgasm control",
+        "orgasm denial",
+        "overstimulation",
+        "painal",
+        "pegging",
+        "period sex",
+        "periodsex",
+        "plug play",
+        "primaldenial",
+        "raceplay",
+        "rimming",
+        "risqué",
+        "scat",
+        "secretlykinky",
+        "semenstealing",
+        "sensory discovery",
+        "sensory play",
+        "sexual awakening",
+        "sexual roleplay",
+        "shame play",
+        "singing during sex",
+        "size difference",
+        "size queen",
+        "sizeplay",
+        "sizequeen",
+        "smell",
+        "smellfetish",
+        "smellkink",
+        "smelly",
+        "squirt",
+        "squirting",
+        "stinky",
+        "sweat",
+        "tantric",
+        "thighjob",
+        "vocal during sex",
+        "worship",
+        "zoophilia"
+      ],
+      "Pet Play": [
+        "claiming",
+        "heat",
+        "heat cycle",
+        "heat cycles",
+        "heat/rut",
+        "in heat",
+        "lifestyle pet play",
+        "marking",
+        "pet",
+        "petplay",
+        "predator/prey",
+        "prey",
+        "prey/predator",
+        "primal",
+        "scent marking",
+        "territorial",
+        "willing prey"
+      ],
+      "Watersports": [
+        "bladder desperation",
+        "desperation",
+        "holding contest",
+        "hydration kink",
+        "omorashi",
+        "pee",
+        "piss",
+        "piss kink",
+        "piss play",
+        "pisskink"
+      ],
+      "Femdom": [
+        "dommy mommy",
+        "dommymommy",
+        "findom",
+        "gentle femdom",
+        "gentlefemdom",
+        "gothmommy",
+        "muscle mommy",
+        "musclemommy",
+        "shecansteponme",
+        "soft femdom"
+      ],
+      "Breeding": [
+        "alien breeding",
+        "breedable",
+        "breeding kink",
+        "breeding program",
+        "creampie",
+        "fertility law",
+        "milking",
+        "milking farm cow",
+        "womb tattoo",
+        "wombtattoo"
+      ],
+      "Foot Fetish": [
+        "feet",
+        "feet fetish",
+        "footfetish",
+        "footjob",
+        "footworship",
+        "trampling"
+      ],
+      "Sadomasochism": [
+        "knifeplay",
+        "masochism",
+        "masochist",
+        "masochistic",
+        "ryona",
+        "sadism",
+        "sadist",
+        "sadistic"
+      ]
+    },
+    "Occupation": {
+      "Knight": [
+        "female knight",
+        "highlander",
+        "knightuser",
+        "paladin"
+      ],
+      "Warrior": [
+        "barbarian",
+        "fighter",
+        "gladiator",
+        "martial artist",
+        "martial arts",
+        "tamer",
+        "tank"
+      ],
+      "Magical Girl": [],
+      "Mage": [
+        "cleric",
+        "enchantress",
+        "holy magic",
+        "magi",
+        "magic user",
+        "magician",
+        "mudang",
+        "necromancer",
+        "shaman",
+        "sorcerer",
+        "sorceress",
+        "summoner",
+        "witch",
+        "witchcraft",
+        "wizard"
+      ],
+      "Assassin": [
+        "assasin",
+        "hitman",
+        "killer"
+      ],
+      "Adventurer": [
+        "a-rank",
+        "adventurer guild",
+        "adventurer party",
+        "guild",
+        "guild leader",
+        "guild master",
+        "guild rpg",
+        "rookie",
+        "s-rank",
+        "srank",
+        "wolf adventurer"
+      ],
+      "Doctor": [
+        "doctorchar",
+        "healer",
+        "health",
+        "healthcare",
+        "hospital",
+        "medical student"
+      ],
+      "Nurse": [],
+      "Police Officer": [
+        "cop",
+        "police",
+        "policegirl"
+      ],
+      "Soldier": [
+        "bodyguard",
+        "captain",
+        "mercenary",
+        "military",
+        "sniper",
+        "veteran"
+      ],
+      "Mafia": [
+        "cartel",
+        "crime syndicate",
+        "gangster",
+        "mob",
+        "yakuza",
+        "yakuzaprincess"
+      ],
+      "Criminal": [],
+      "Bartender": [
+        "barista",
+        "barmaid",
+        "taverngirl"
+      ],
+      "Waitress": [
+        "maid cafe",
+        "waiter"
+      ],
+      "Artist": [
+        "artsy",
+        "fashion designer",
+        "florist",
+        "guitarist",
+        "mangaka",
+        "painter",
+        "photography",
+        "vocalist"
+      ],
+      "Writer": [
+        "author",
+        "Journalist"
+      ],
+      "Scientist": [
+        "archeologist",
+        "marine biology",
+        "science"
+      ],
+      "Stripper": [
+        "pole dancer"
+      ],
+      "Pornstar": [
+        "porn star"
+      ],
+      "Spy": [
+        "defector",
+        "pmc",
+        "secret agent",
+        "spychar"
+      ],
+      "Pirate": [],
+      "Viking": [
+        "norse",
+        "vikings"
+      ],
+      "Samurai": [
+        "ronin",
+        "swordsman"
+      ],
+      "Ninja": [
+        "shinobi"
+      ],
+      "Therapist": [
+        "psychiatrist",
+        "psychologist",
+        "therapy"
+      ],
+      "Thief": [
+        "con artist",
+        "con-artist",
+        "grifter",
+        "hustler",
+        "outlaw",
+        "pickpocket",
+        "rogue",
+        "scam",
+        "scammer"
+      ],
+      "Secretary": [
+        "assistant/secretary"
+      ],
+      "Model": [
+        "supermodel"
+      ],
+      "Bard": [
+        "minstrel"
+      ],
+      "Hunter": [
+        "archer",
+        "ranger"
+      ],
+      "Detective": [
+        "noir detective"
+      ],
+      "Yoga Instructor": [],
+      "Hacker": [
+        "cybercrime",
+        "engineering",
+        "programmer",
+        "programming"
+      ],
+      "Mechanic": [],
+      "Merchant": [],
+      "Librarian": [
+        "bookstore"
+      ],
+      "Entertainer": [
+        "actress",
+        "performer",
+        "theatre"
+      ],
+      "Lifeguard": [],
+      "Intern": [
+        "job interview"
+      ],
+      "Working Class": [
+        "baker",
+        "biker",
+        "bikerbabe",
+        "blue collar",
+        "business owner",
+        "cashier",
+        "cook",
+        "mail carrier",
+        "massage",
+        "massage therapist",
+        "part-timer",
+        "peasantchar",
+        "pink collar",
+        "receptionist",
+        "retail",
+        "stuntwoman",
+        "unemployed"
+      ],
+      "Corporate": [
+        "ceo",
+        "executive",
+        "manager",
+        "white collar"
+      ]
+    },
+    "Plot / Theme": {
+      "Betrayal": [
+        "bestfriendbetrayal",
+        "betrayedchar",
+        "loyaltytest",
+        "possiblebetrayal",
+        "sacrificechar"
+      ],
+      "Revenge": [
+        "vengeance"
+      ],
+      "Kidnapping": [
+        "captive",
+        "captivity",
+        "capture",
+        "home invasion",
+        "homeinvasion",
+        "kidnapped",
+        "kidnapper",
+        "prison",
+        "prisoner",
+        "trapped"
+      ],
+      "Toxic Relationship": [
+        "codependent",
+        "controlling",
+        "controllingpartner",
+        "toxic",
+        "unhealthy relationship"
+      ],
+      "Power Imbalance": [
+        "class difference",
+        "classdifference",
+        "control",
+        "power dynamics",
+        "power fantasy",
+        "power play",
+        "powerimbalance"
+      ],
+      "Stalker": [
+        "stalking"
+      ],
+      "Redemption": [
+        "newbeginnings",
+        "redemptionweek",
+        "second chance",
+        "secondchance"
+      ],
+      "Secret Identity": [
+        "double life",
+        "false identity",
+        "hidden identity",
+        "masks",
+        "secret princess",
+        "secretlife",
+        "secretpast",
+        "secretprincess"
+      ],
+      "Time Travel": [
+        "deathloop",
+        "time loop",
+        "time traveler",
+        "time travelling",
+        "timeleap",
+        "timeloop"
+      ],
+      "Religion": [
+        "catholic",
+        "christian",
+        "christianity",
+        "church",
+        "conversion",
+        "cult",
+        "exorcism",
+        "faith",
+        "folklore",
+        "heaven",
+        "hell",
+        "monk",
+        "muslim",
+        "mythological",
+        "mythology",
+        "priest",
+        "religious",
+        "saintess",
+        "spirituality",
+        "temple/church"
+      ],
+      "Drugs": [
+        "drug addict",
+        "drug dealer",
+        "drug use",
+        "drugaddict",
+        "drugged",
+        "drugging",
+        "drugs/addiction",
+        "meth"
+      ],
+      "Alcohol": [
+        "alcoholic",
+        "drunk",
+        "drunkmistake",
+        "drunknight"
+      ],
+      "Savior": [
+        "reverse savior",
+        "saved from rape",
+        "saveher",
+        "saviorfagging",
+        "saviorkink",
+        "saviour"
+      ],
+      "Stockholm Syndrome": [
+        "stockholmsyndrome"
+      ],
+      "Heartbreak": [
+        "break up",
+        "breakup",
+        "heartbreaker",
+        "messyromance",
+        "moving on",
+        "movingon",
+        "rejection",
+        "youlefther"
+      ],
+      "Pandemic": [],
+      "Refugee": [
+        "foreign character(s)",
+        "foreigner",
+        "ghetto",
+        "homeless",
+        "homelesschar",
+        "huntedchar",
+        "immigrant",
+        "non-english",
+        "orphan",
+        "poor",
+        "runaway",
+        "survivor"
+      ],
+      "Sleep": [
+        "bedsharing",
+        "insomnia",
+        "sharedhotelroom",
+        "sleep paralysis",
+        "sleep sex",
+        "sleeping",
+        "sleepover",
+        "sleepwalking",
+        "sleepy",
+        "somnophilia"
+      ],
+      "Philosophical": [
+        "existential",
+        "freedom",
+        "identity",
+        "justice",
+        "knowledge",
+        "meta",
+        "philosophy",
+        "psychological",
+        "psychology"
+      ],
+      "Politics": [
+        "anti-gay",
+        "conservative",
+        "feminist",
+        "liberation",
+        "misandrist",
+        "racism",
+        "rebellion"
+      ],
+      "Secret": [
+        "rumor"
+      ],
+      "Forced Proximity": [
+        "forcedproximity",
+        "sharingabed"
+      ]
+    },
+    "Fandom": {
+      "Genshin Impact": [
+        "genshinimpact",
+        "miyoverse"
+      ],
+      "Honkai: Star Rail": [
+        "honkai star rail",
+        "honkaistarrail"
+      ],
+      "Zenless Zone Zero": [
+        "zzz"
+      ],
+      "Wuthering Waves": [
+        "wutheringwaves"
+      ],
+      "Blue Archive": [],
+      "Final Fantasy XIV": [
+        "ffxiv"
+      ],
+      "League of Legends": [
+        "arcane",
+        "leagueoflegends"
+      ],
+      "World of Warcraft": [
+        "wow"
+      ],
+      "Warhammer": [
+        "warhammer 40k",
+        "warhammer fantasy",
+        "warhammerfantasy"
+      ],
+      "Star Wars": [
+        "jedi",
+        "old republic",
+        "oldrepublic",
+        "sith",
+        "starwars"
+      ],
+      "Star Trek": [],
+      "Tekken": [],
+      "Street Fighter": [],
+      "Baldur's Gate": [
+        "baldurs gate"
+      ],
+      "Dungeons & Dragons": [
+        "d&amp;d",
+        "d&d",
+        "dnd",
+        "dungeon and dragons",
+        "dungeons and dragons",
+        "faerun",
+        "forgotten realms"
+      ],
+      "Skyrim": [],
+      "Harry Potter": [
+        "hogwarts"
+      ],
+      "Disney": [
+        "disney princess",
+        "disneyland",
+        "the incredibles"
+      ],
+      "The Eternal Concord": [
+        "theeternalconcord"
+      ],
+      "Arloxe": [],
+      "Alteyra": [],
+      "Arcanthea": [],
+      "Memoria": [],
+      "Saga of Light and Shadow": [],
+      "Broken Lace": [
+        "brokenlace"
+      ],
+      "Drakonia": [],
+      "Nyxia": [],
+      "Virtularia": [],
+      "DreamWorks": [
+        "dreamworks"
+      ],
+      "Paradoxium": [
+        "paradoxium"
+      ],
+      "Urban Shadows": [
+        "urbanshadows"
+      ],
+      "Final Revelation": [
+        "finalrevelation"
+      ],
+      "Nikke": []
+    },
+    "Mental Health / Condition": {
+      "Depression": [
+        "bpd",
+        "depressed",
+        "mental illness",
+        "mentally ill",
+        "suicidal",
+        "suicidalchar"
+      ],
+      "Anxiety": [
+        "anxious"
+      ],
+      "Trauma": [
+        "abandoned",
+        "abandonment issues",
+        "abuse",
+        "abuse victim",
+        "abuseaftermath",
+        "abusive",
+        "broken",
+        "coping mechanisms",
+        "cruelfate",
+        "daddy issues",
+        "domesticviolence",
+        "emotionaldamage",
+        "grief",
+        "ptsd",
+        "sadbackstory",
+        "traumabond",
+        "traumatic",
+        "traumatized"
+      ],
+      "Autism": [
+        "autistic",
+        "autisticchar"
+      ],
+      "Disability": [
+        "anorexic",
+        "blind",
+        "blindchar",
+        "cancer",
+        "cripple",
+        "deaf",
+        "disabled",
+        "disabledchar",
+        "handicapped",
+        "incurabledisease",
+        "injured",
+        "terminal illness",
+        "terminalillness",
+        "terminallyill"
+      ],
+      "Amnesia": [
+        "amnesic",
+        "memory loss"
+      ],
+      "Self-Harm": [
+        "self harm",
+        "self-harm/suicide",
+        "selfharm"
+      ],
+      "Addiction": [],
+      "Psychosis": [
+        "delusional",
+        "psychotic",
+        "schizo",
+        "schizophrenia"
+      ],
+      "Neurodivergent": [
+        "adhd",
+        "neurodivergentchar"
+      ],
+      "Mental Health": [
+        "mentalhealth"
+      ]
+    }
+  },
+  "removedTags": [
+    "2009",
+    "2025",
+    "5 greetings",
+    "500tokenpower",
+    "abandoned demihumans botjam [the orchard]",
+    "accent",
+    "accident",
+    "adolion",
+    "adorable",
+    "adorablefrfr",
+    "adorkable",
+    "aegis city heroes",
+    "aetherlink",
+    "aftermath",
+    "aggressive",
+    "ai",
+    "alichat",
+    "ambitious",
+    "amogus",
+    "among us",
+    "amymatzumi",
+    "anatomical detail",
+    "angry",
+    "animals",
+    "animation",
+    "anime",
+    "any",
+    "any pov",
+    "any_pov",
+    "anypov",
+    "apartment",
+    "app",
+    "aremm",
+    "arlo",
+    "arrogant",
+    "art",
+    "asha",
+    "assassinpov",
+    "asylum",
+    "athletic girl",
+    "athletic women",
+    "aurelius",
+    "authentic responses",
+    "autistic as fuck bruh",
+    "avoidabletf",
+    "baby",
+    "badassy",
+    "baddecisions",
+    "badpersonpov",
+    "badpov",
+    "baduser",
+    "bbgenrejam",
+    "bbw",
+    "beautiful",
+    "bedroom",
+    "big ass",
+    "big boobies",
+    "big boobs",
+    "big breast",
+    "big breasts",
+    "big butt",
+    "big thighs",
+    "big tits",
+    "big woman",
+    "bigass",
+    "bigtiddies",
+    "bikini",
+    "bitch",
+    "bitchuniversity",
+    "black hair",
+    "blackrose",
+    "bleached",
+    "blonde",
+    "blonde hair",
+    "blue eyes",
+    "blue hair",
+    "blue skin",
+    "bmovie",
+    "body language",
+    "body modification",
+    "body positive",
+    "bohemian",
+    "books",
+    "botmas",
+    "botmas 25",
+    "botmas25",
+    "brands",
+    "british accent",
+    "brookside",
+    "brown skin",
+    "brunette",
+    "bullypov",
+    "bullysmother",
+    "bullyweek",
+    "burn scars",
+    "bwc",
+    "cafe",
+    "café",
+    "cai",
+    "canon compliant",
+    "canon_compliant",
+    "canyousaveher",
+    "cartoon",
+    "chameleon",
+    "chaotic",
+    "character",
+    "character expressions",
+    "charismatic",
+    "chat",
+    "chat image",
+    "chat images",
+    "chatbot",
+    "chatroom",
+    "chess",
+    "chub",
+    "chub love 2025",
+    "chubaween 2023",
+    "chubby",
+    "circus",
+    "city of darkness",
+    "city of darkness villain",
+    "classy",
+    "claude",
+    "closeted",
+    "clothesdontfitweek",
+    "confident",
+    "confrontation",
+    "consensual",
+    "contest",
+    "conversation",
+    "cooked",
+    "coombot",
+    "cravingsandurges",
+    "crestfalltown",
+    "crestfalltownoc",
+    "cringe but cute",
+    "cringey",
+    "crush crush",
+    "culture",
+    "cupidconnections",
+    "curious",
+    "curvy",
+    "curvy figure",
+    "cute",
+    "cute speech pattern",
+    "cutebutdangerous",
+    "daredevil",
+    "dark-skinned",
+    "deadwood",
+    "demipov",
+    "demiweek",
+    "demon pov",
+    "desert",
+    "desperate",
+    "detroit2220",
+    "dhu",
+    "diner",
+    "direct message",
+    "disabled user",
+    "divided skies",
+    "doll",
+    "drowned earth",
+    "dumbasabrick",
+    "dumbassweek",
+    "dungeon",
+    "eaglefangseries",
+    "elevator",
+    "eltaraseries",
+    "embarrassment",
+    "emergency",
+    "emotional",
+    "emotional intimacy",
+    "emotionally unavailable",
+    "empath",
+    "empathetic",
+    "empire",
+    "endoftheuniverse",
+    "enhanced",
+    "entertainment",
+    "experimental",
+    "expression pack",
+    "expressions pack",
+    "extrovert",
+    "extroverted",
+    "fadeddreams",
+    "fantasyweek",
+    "fem/femme",
+    "fempov",
+    "fictional",
+    "fictional character",
+    "filing system",
+    "finalgirljam",
+    "first person",
+    "fish",
+    "fish out of water",
+    "fishoutofwater",
+    "fit",
+    "flamebound",
+    "flat chest",
+    "flatchested",
+    "forced proximity",
+    "foreignerseries",
+    "fork",
+    "fork of a fork",
+    "found again",
+    "freakacademy",
+    "freakyahhbot",
+    "freckles",
+    "freezing",
+    "friendstosomething",
+    "Fucklympics",
+    "fujoshi",
+    "gallery",
+    "gardenofsins",
+    "geekdom",
+    "gigachadpov",
+    "ginger",
+    "glasses",
+    "glitch",
+    "glowup",
+    "gonuts",
+    "goodluckdude",
+    "goodpersonpov",
+    "gorgeous",
+    "gpt3.5turbo",
+    "gpt4",
+    "green eyes",
+    "greeting art",
+    "greeting images",
+    "groupiepov",
+    "grumpy",
+    "guilty",
+    "hallura",
+    "handlewithcare",
+    "happy",
+    "hardtimes",
+    "harmony heroines",
+    "hedonistic",
+    "heroparty",
+    "hiddenpersonality",
+    "holiday2025",
+    "holidays",
+    "holidays2025",
+    "home",
+    "homestay",
+    "horse",
+    "horse streamer",
+    "horsecock",
+    "hot",
+    "hotaf",
+    "hotel",
+    "hottie",
+    "huge ass",
+    "huge breasts",
+    "huge butt",
+    "hyper butt",
+    "i love cheesecake",
+    "ilovewomen",
+    "image generating",
+    "image greetings",
+    "images in gallery",
+    "immortal",
+    "incrediblydumb",
+    "independent",
+    "indie",
+    "inner thoughts",
+    "intelligent",
+    "interactiveimages",
+    "interracial",
+    "interview",
+    "inverted nipples",
+    "islaport",
+    "itskandi",
+    "kayra",
+    "khevari",
+    "kinda cringe",
+    "kindofbrattyiguess",
+    "klinaterra",
+    "large anatomy",
+    "large breasts",
+    "large butt",
+    "lassie",
+    "little",
+    "little breasts",
+    "lntuniversity",
+    "loj",
+    "long hair",
+    "long legs",
+    "lore",
+    "lorebook",
+    "lorebook included",
+    "lorebookincluded",
+    "los angeles",
+    "los arcanos",
+    "los fangeles",
+    "losingbff",
+    "lost",
+    "lustful",
+    "lyozes",
+    "m4a",
+    "m4f",
+    "magia",
+    "magika",
+    "maincharactersyndrome",
+    "malaysia",
+    "malepov",
+    "manga",
+    "mao bao",
+    "marysue",
+    "massive ass",
+    "massive breasts",
+    "medium breasts",
+    "megane",
+    "meganekko",
+    "melancholic",
+    "meltsyourheart",
+    "memes",
+    "meowami",
+    "minneapolis",
+    "misfitstales",
+    "misunderstanding",
+    "mitsuri",
+    "mitsurikanroji",
+    "miyabisearstd6",
+    "monsterpov",
+    "moondropvalley",
+    "moraldilemma",
+    "more death threats than a call of duty lobby",
+    "moth",
+    "movie",
+    "movies & tv",
+    "multiple greetings",
+    "multiple personality",
+    "multiple scenarios",
+    "multiple_greetings",
+    "muscle",
+    "muscular",
+    "music maina",
+    "music mania",
+    "musicmaina2",
+    "musicmania",
+    "musicmania2",
+    "mythomax",
+    "needshelp",
+    "needstowarmup",
+    "new houston",
+    "nicetbrazilianromance",
+    "nihilistic",
+    "no limits",
+    "non-humanpov",
+    "northern",
+    "nosebleed",
+    "not oc because its a fork hihiha",
+    "novelai",
+    "nsfwpics",
+    "oai",
+    "oc",
+    "oneofthebros",
+    "oneorangebraincell",
+    "online",
+    "online chat",
+    "orange eyes",
+    "orca",
+    "original character",
+    "original characters",
+    "original world",
+    "original_prose",
+    "pale skin",
+    "parasocial",
+    "passporttopages",
+    "pattern recognition",
+    "paul",
+    "peace",
+    "perfect body",
+    "performance vs reality",
+    "petalsinwinter",
+    "petite",
+    "petrock",
+    "pets",
+    "physics",
+    "pickmegirl",
+    "pictures",
+    "piercings",
+    "pink hair",
+    "pinkpanther",
+    "pixie cut",
+    "plus size",
+    "pointed ears",
+    "popularuser",
+    "possible",
+    "post",
+    "poundseries",
+    "practice",
+    "presidentsdaughter",
+    "probably racist 👀",
+    "propagate her",
+    "psychiatristpov",
+    "purple eyes",
+    "raccoon",
+    "ragequitter",
+    "reality tv",
+    "red eyes",
+    "red hair",
+    "redhead",
+    "reluctant",
+    "restaurant",
+    "reupload",
+    "reversed personality",
+    "richarrd",
+    "rimevale",
+    "rokos basilisk",
+    "roleplay",
+    "root",
+    "s.t.a.l.k.e.r",
+    "s.t.a.l.k.e.r.",
+    "sacrifice",
+    "sad",
+    "sandbox",
+    "sapiosexual",
+    "sarah",
+    "sarntetralogy",
+    "scenario",
+    "second person-pov",
+    "self insert",
+    "self-aware",
+    "selfbot",
+    "selfdestructive",
+    "selfinsert",
+    "sensitive",
+    "separation",
+    "sequel card",
+    "sexbot",
+    "sexy",
+    "shadow clones",
+    "shaved",
+    "sheaveragefr",
+    "sheepinwolfsclothing",
+    "sheiscrazy",
+    "shetallfr",
+    "short",
+    "short hair",
+    "shortstack",
+    "shotapov",
+    "silly tavern",
+    "sillytavern",
+    "simulation",
+    "simulator",
+    "sitchel",
+    "skinny",
+    "small anatomy",
+    "small breasts",
+    "smallbreasts",
+    "smuff",
+    "snake",
+    "snowstorm",
+    "social skills",
+    "southern",
+    "southern accent",
+    "special",
+    "special5k",
+    "specific preferences",
+    "spider",
+    "springfever",
+    "stargate",
+    "starlight superhero universe",
+    "stars",
+    "starstruck world",
+    "std",
+    "stealingclothes",
+    "stepford",
+    "straight",
+    "stray",
+    "strong woman",
+    "stuck",
+    "stuckinanelevator",
+    "stuckindryer",
+    "stuckwithyou!",
+    "suburbangothic",
+    "succession",
+    "supercity",
+    "superpowerweek",
+    "support",
+    "supportive",
+    "suspiciousbehavior",
+    "swimsuit",
+    "tall",
+    "tall woman",
+    "tanned",
+    "tattoos",
+    "tavern",
+    "teasingaffecftion",
+    "tech",
+    "technology",
+    "texting",
+    "the beginning",
+    "thebasement",
+    "thegoat",
+    "thesunderedstars",
+    "theunderworldchapter",
+    "theworldofterra",
+    "thicc",
+    "thick",
+    "thick thighs",
+    "thigh",
+    "thin walls",
+    "third person",
+    "time",
+    "tiny",
+    "tiny titties",
+    "tits",
+    "toned muscles",
+    "touch",
+    "train",
+    "trust",
+    "twintails",
+    "ughhhhyixuannnn",
+    "undeniably a coom bot",
+    "underagepov",
+    "unestablished relationship",
+    "unity space opera",
+    "unreliable narrator",
+    "unreliable/flakey",
+    "unsealed",
+    "untaguniverse",
+    "urban fiction",
+    "urbex gone wrong",
+    "user harm",
+    "vartania",
+    "velkora",
+    "veltharion",
+    "veyonis",
+    "victim",
+    "vikingpov",
+    "villainpov",
+    "vira",
+    "voluptous",
+    "voruun",
+    "w4a",
+    "w4m",
+    "weird!!! shes weird!!!!",
+    "well-intentioned extremist",
+    "wench",
+    "what am i doing with my life",
+    "white hair",
+    "white worship",
+    "wholeawesome",
+    "wholesomeweek",
+    "wide hips",
+    "wish.com botjam",
+    "wmaf",
+    "workshop botmas 25",
+    "xenosis",
+    "year900",
+    "zooweemama",
+    "👤 anypov",
+    "nonocweek",
+    "purple hair",
+    "artefactuser",
+    "sunflower",
+    "bait",
+    "discord"
+  ]
+}
