@@ -1,0 +1,39 @@
+# How it works
+
+## Fix Characters (the main action)
+
+For every card in `data/{user}/characters/`, the server does three things in a single decode/write:
+
+1. **Merge tags** using your dictionary — each messy variant (`#Female`, `female`, `FEMALE`) becomes its clean canonical (`Female`); junk tags are deleted; duplicates collapse.
+2. **Repair the card** — a lightweight, conservative upgrade: V2→V3, backfill required V3 fields, and fix malformed template tokens (`{char}` → `{{char}}`, broken pronoun aliases → `{{user}}`). It never rewrites prose or clears prompts.
+3. **Compress the image** — quantized with pngquant, oversized cards downscaled, with the embedded card JSON preserved (character cards are never converted to WEBP, which can't carry the metadata).
+
+A card is rewritten whenever its tags changed, it was repaired, or the image shrank — so nothing is ever lost. Files already processed are skipped on repeat runs; **editing the dictionary automatically re-runs every card** (the server tracks which dictionary a card was last processed under).
+
+The extension is the driver: it decides *what* to do and hands the work to the server plugin, which does all the file surgery. See the server's [Architecture](https://github.com/EnchantedRobot/SillyTavern-Character-Tools-Server/blob/main/docs/architecture.md) doc for the exact repair rules.
+
+## The tag dictionary
+
+Tags are driven by a **persistent dictionary** that maps each messy variant onto one clean canonical tag, plus a list of junk tags to remove. You curate it in **Edit Tag Dictionary** — a three-list editor (canonical + merged variants, unassigned, removed) where clicking a tag moves it between buckets. Every edit saves automatically.
+
+The dictionary is owned entirely by the extension (stored in your extension settings, seeded from the shipped `tag-dictionary.json`) and handed to the server on each run. That means **curating tags never requires restarting the server** — only the actual apply does file work.
+
+## Compress Images (sidecar)
+
+**Compress Images** compresses `data/{user}/user/images/` (your chat gallery): PNG/JPG are re-encoded, and where it helps, converted to WEBP and downscaled. This is independent of the character pass.
+
+## Stats & Reprocess
+
+- **Stats** — file counts and sizes for both directories, without changing anything.
+- **Reprocess Characters / Images** — clears the skip-state and re-runs from scratch.
+
+## Example run summary
+
+```
+Scanned:    1,842
+Skipped:    1,204
+Compressed: 638
+Repaired:   57
+Tags fixed: 431
+Saved:      312.4 MB
+```
