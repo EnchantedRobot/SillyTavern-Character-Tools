@@ -2,10 +2,10 @@
 // Builds the Tag Dictionary editor modal. This is a pure curation surface: it
 // edits the persistent dictionary and saves every change automatically. It does
 // NOT rewrite any cards itself — applying the dictionary is the server's job. The
-// footer's "Apply Tags" button closes the editor and runs the character pass WITH
-// the dictionary attached (merge tags + repair + compress). The main panel's "Fix
-// Characters" button runs that same pass WITHOUT the dictionary, so merging tags
-// onto cards happens only from here.
+// footer's "Apply Tags" button closes the editor and runs the server's tag pass,
+// which rewrites each card's tags and nothing else. Repair and compression are a
+// separate pass behind the main panel's "Fix Characters" button, so merging tags
+// onto cards happens only from here — and never costs a re-compression.
 //
 // The model is a persistent dictionary. The modal shows three lists:
 //   • Canonical tags + the variants that merge into each (the full dictionary).
@@ -147,7 +147,7 @@ export function openModal(characters, mapping, removedTags, catCategories = {}, 
 
     const footer = overlayEl.querySelector('.ctm-footer');
     if (onApplyTagsCb) {
-        const applyBtn = el(`<div id="ctm-apply" class="menu_button" title="Save the dictionary and apply it to your cards: merge tags + repair + compress in one pass"><i class="fa-solid fa-tags"></i>&nbsp;&nbsp;Apply Tags</div>`);
+        const applyBtn = el(`<div id="ctm-apply" class="menu_button" title="Save the dictionary and apply it to your cards. Rewrites tags only — use Fix Characters to repair and compress."><i class="fa-solid fa-tags"></i>&nbsp;&nbsp;Apply Tags</div>`);
         applyBtn.addEventListener('click', () => { const cb = onApplyTagsCb; closeModal(); cb(); });
         footer.appendChild(applyBtn);
     }

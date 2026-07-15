@@ -29,7 +29,7 @@ git clone https://github.com/EnchantedRobot/SillyTavern-Character-Tools
 Open the **Extensions** panel → **Character Tools**, pick a user from the dropdown (populated from your `data/` directory), then use any of:
 
 - **Fix Characters** — repair/upgrade every card and compress its image in one pass. It does **not** change tags. A progress bar and log summarise cards repaired and space saved.
-- **Edit Tag Dictionary** — curate what merges, then **Apply Tags** to write it onto your cards. A three-list editor (canonical + merged variants, unassigned, removed) where clicking a tag moves it between buckets; every edit saves automatically. The footer's **Apply Tags** button runs the character pass *with* your dictionary (merge tags + repair + compress); it's idempotent, so re-applying clean cards is a no-op. No server restart needed.
+- **Edit Tag Dictionary** — curate what merges, then **Apply Tags** to write it onto your cards. A three-list editor (canonical + merged variants, unassigned, removed) where clicking a tag moves it between buckets; every edit saves automatically. The footer's **Apply Tags** button rewrites tags **only** — no repair, no re-compression — so it stays fast and is safe to re-run; re-applying clean cards is a no-op. No server restart needed.
 - **Compress Images** — sidecar that compresses your chat gallery (`user/images/`), independent of the character pass.
 - **Stats** — file counts and sizes for both directories, without changing anything.
 - **Reprocess Characters / Images** — clear the skip-state and re-run from scratch.
