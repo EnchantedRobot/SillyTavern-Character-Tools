@@ -8,14 +8,3 @@
 # Node
 node_modules/
 coverage/
-
-# Corpus coverage report — generated locally by scripts/build-mapping.py from
-# whatever test corpus is present; pure discovery output, never ground truth.
-unmapped-report.json
-
-# Python
-__pycache__/
-*.py[cod]
-*.egg-info/
-.venv/
-venv/

@@ -47,6 +47,27 @@ export async function fetchStats(user) {
 }
 
 /**
+ * Observed character tags for a user, surveyed server-side from
+ * data/<user>/characters/ (root PNGs only). Returns `{ avatar, tags }[]` — the
+ * shape the dictionary editor's buildBuckets consumes. Unlike SillyTavern's
+ * in-browser character list (always the logged-in user), this respects the
+ * user picked in the panel.
+ */
+export async function fetchCharacterTags(user) {
+    const res = await fetch(`${PLUGIN_BASE}/character-tags`, {
+        method: 'POST',
+        headers: getRequestHeaders(),
+        body: JSON.stringify({ user }),
+    });
+    if (!res.ok) {
+        const err = await res.json().catch(() => ({ error: res.statusText }));
+        throw new Error(err.error || res.statusText);
+    }
+    const data = await res.json();
+    return data.characters ?? [];
+}
+
+/**
  * POST a job and consume its SSE stream. Calls `onProgress(event)` for each
  * progress event and resolves with the final CompressionResult (or null if the
  * stream ended without one). Throws on a non-OK response.

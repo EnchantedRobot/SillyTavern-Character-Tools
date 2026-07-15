@@ -11,7 +11,7 @@
 // server holds none of its own, so editing tags never needs a server restart.
 
 import { openModal } from './ui-editor.js';
-import { probePlugin, fetchUsers, fetchStats, runJob } from './api.js';
+import { probePlugin, fetchUsers, fetchStats, runJob, fetchCharacterTags } from './api.js';
 
 const MODULE_NAME = '[Character Tools]';
 const PANEL_ID = 'sct-panel';
@@ -358,14 +358,25 @@ const runCompressImages = (reprocess = false) => runPanelJob(reprocess ? '/repro
 // ── Editor ─────────────────────────────────────────────────────────────────────
 
 async function openEditor() {
+    const user = document.getElementById('sct-user')?.value;
+    if (!user) {
+        toastr.info('No user selected.', 'Character Tools');
+        return;
+    }
+    const editBtn = document.getElementById('sct-edit');
+    editBtn?.setAttribute('disabled', 'true');
     try {
-        const ctx = SillyTavern.getContext();
-        const characters = ctx.characters || [];
+        // Survey the SELECTED user's cards server-side (SillyTavern's in-browser
+        // list only ever holds the logged-in user), so the editor's counts and
+        // "unassigned" discovery match the user Apply Tags will run against.
+        const characters = await fetchCharacterTags(user);
         const { mapping, removedTags, canonicalCategories, categoryOrder, baseMapping, baseRemovedTags } = await ensureDictionary();
         openModal(characters, mapping, removedTags, canonicalCategories, categoryOrder, baseMapping, baseRemovedTags, () => runApplyTags(false));
     } catch (e) {
         console.error(MODULE_NAME, e);
         toastr.error('Failed to open the tag editor. See console.', 'Character Tools');
+    } finally {
+        editBtn?.removeAttribute('disabled');
     }
 }
 
