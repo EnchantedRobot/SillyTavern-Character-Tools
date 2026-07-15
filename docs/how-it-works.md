@@ -17,9 +17,15 @@ Tags are driven by a **persistent dictionary** that maps each messy variant onto
 
 The editor's tag counts and its "unassigned" discovery are surveyed from the **user selected in the panel**: opening the editor asks the server to scan that user's `characters/` (via `/character-tags`), so what you curate matches the user Apply Tags will run against. (SillyTavern's in-browser character list only ever holds the *logged-in* user, so the editor asks the server instead of reading it.) The dictionary itself is global — the selected user only scopes the counts and the apply.
 
-Curating never touches your cards. When you're ready, hit **Apply Tags** in the editor's footer: that runs the same character pass as Fix Characters but **with your dictionary attached**, so each card's tags are rewritten (each messy variant → its clean canonical, junk deleted, duplicates collapsed) *and* the card is repaired and compressed — all in one pass per card.
+Curating never touches your cards. When you're ready, hit **Apply Tags** in the editor's footer: the dictionary goes to the server, which rewrites each card's tags (each messy variant → its clean canonical, junk deleted, duplicates collapsed).
 
-The dictionary is owned entirely by the extension (stored in your extension settings, seeded from the shipped `tag-dictionary.json`) and handed to the server only on an **Apply Tags** run. That means **curating tags never requires restarting the server**. Applying is idempotent — re-running Apply Tags on already-clean cards changes nothing — and because the server records which dictionary a card was last processed under, **editing the dictionary automatically re-runs every card** on the next apply.
+**Apply Tags rewrites tags and nothing else.** It doesn't repair cards and it doesn't touch images — the card's image data is carried across byte-for-byte, so there's no re-compression. That's what makes it cheap enough to re-run whenever you like; repair and compression live behind **Fix Characters**, which in turn never touches tags. The two passes are fully independent, and neither can undo or slow the other.
+
+The dictionary is owned entirely by the extension (stored in your extension settings, seeded from the shipped `tag-dictionary.json`) and handed to the server only on an **Apply Tags** run. That means **curating tags never requires restarting the server**. There's no skip-state to manage and no Reprocess button: the server checks each card against the dictionary and rewrites only the ones that actually change. So an apply is always complete (an edited dictionary re-tags every card that needs it) *and* idempotent (re-applying an unchanged dictionary writes nothing at all).
+
+Once your dictionary has settled, a typical apply leaves the overwhelming majority of cards untouched — only the handful that actually had a messy tag get rewritten.
+
+**Tip:** on a fresh library, run **Apply Tags** *before* **Fix Characters**. Retagging a card changes it, so Fix Characters will pick it up on its next run either way; doing tags first means those cards are compressed once, in the pass that was going to run anyway.
 
 ## Compress Images (sidecar)
 
@@ -28,17 +34,24 @@ The dictionary is owned entirely by the extension (stored in your extension sett
 ## Stats & Reprocess
 
 - **Stats** — file counts and sizes for both directories, without changing anything.
-- **Reprocess Characters / Images** — clears the skip-state and re-runs from scratch.
+- **Reprocess Characters / Images** — clears the skip-state and re-runs from scratch. Apply Tags has no equivalent because it keeps no skip-state.
 
-## Example Apply Tags run summary
+## Example run summaries
+
+**Fix Characters** — repair + compression, no tags:
 
 ```
 Scanned:    1,842
 Skipped:    1,204
 Compressed: 638
 Repaired:   57
-Tags fixed: 431
 Saved:      312.4 MB
 ```
 
-A plain **Fix Characters** run looks the same without the **Tags fixed** line.
+**Apply Tags** — tags only, so there are no bytes to report. "Unchanged" is the cards the dictionary had nothing to do to:
+
+```
+Scanned:    1,842
+Unchanged:  1,411
+Tags fixed: 431
+```

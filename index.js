@@ -5,10 +5,18 @@
 // and compresses its image — one write per card — and deliberately leaves tags
 // alone. Merging tags is a separate operation: you curate the dictionary in the
 // Edit Tag Dictionary editor and hit "Apply Tags" there to write the merge onto
-// your cards. "Compress Images" is the user/images sidecar. The tag dictionary
-// is owned here (persisted in extension settings, seeded from the shipped
-// tag-dictionary.json) and passed to the server only on an Apply Tags run; the
-// server holds none of its own, so editing tags never needs a server restart.
+// your cards. "Compress Images" is the user/images sidecar.
+//
+// Apply Tags and Fix Characters are separate server passes on purpose. Apply
+// Tags rewrites only the card's tag array, carrying the image across untouched,
+// so it's cheap and safe to re-run; Fix Characters does the expensive
+// repair/re-encode and tracks what it has already done. Routing tags back
+// through the repair pass would make every tag edit re-compress the library.
+//
+// The tag dictionary is owned here (persisted in extension settings, seeded from
+// the shipped tag-dictionary.json) and passed to the server only on an Apply
+// Tags run; the server holds none of its own, so editing tags never needs a
+// server restart.
 
 import { openModal } from './ui-editor.js';
 import { probePlugin, fetchUsers, fetchStats, runJob, fetchCharacterTags } from './api.js';
@@ -242,27 +250,36 @@ async function runStats() {
 
 // ── Job runner ─────────────────────────────────────────────────────────────────
 
+const OP_LABELS = { images: 'Compression', characters: 'Fix Characters', tags: 'Apply Tags' };
+
 /**
  * Run a server job over SSE, streaming progress into the panel.
+ *
+ * The three kinds map to three separate server passes, and the split is the
+ * point: 'tags' sends the dictionary to /apply-tags, which rewrites tags and
+ * nothing else; 'characters' sends no dictionary at all, so repair/compression
+ * can never touch tags. Don't merge them back together.
+ *
  * @param {string} path  endpoint path, e.g. '/fix-characters'
- * @param {'characters'|'images'} kind
- * @param {{withDictionary?: boolean}} [opts]  attach the tag dictionary (the
- *   Apply Tags / merge path). Off by default, so Fix Characters only repairs and
- *   compresses and never touches tags.
+ * @param {'characters'|'images'|'tags'} kind
  */
-async function runPanelJob(path, kind, { withDictionary = false } = {}) {
+async function runPanelJob(path, kind) {
     const user = document.getElementById('sct-user')?.value;
     if (!user) {
         toastr.info('No user selected.', 'Character Tools');
         return;
     }
 
-    const opLabel = kind === 'images' ? 'Compression' : withDictionary ? 'Apply Tags' : 'Fix Characters';
+    const opLabel = OP_LABELS[kind];
 
     const body = { user };
-    if (kind === 'characters' && withDictionary) {
+    if (kind === 'tags') {
         const dict = getRunDictionary();
-        if (dict) body.dictionary = dict;
+        if (!dict) {
+            toastr.info('The tag dictionary is empty — nothing to apply.', 'Character Tools');
+            return;
+        }
+        body.dictionary = dict;
     }
 
     const bar = document.getElementById('sct-bar');
@@ -296,13 +313,16 @@ async function runPanelJob(path, kind, { withDictionary = false } = {}) {
         label.textContent = 'Done';
 
         appendLog(`Scanned:    ${result.filesScanned.toLocaleString()}`);
-        appendLog(`Skipped:    ${result.filesSkipped.toLocaleString()}`);
-        appendLog(`Compressed: ${result.filesCompressed.toLocaleString()}`);
-        if (kind === 'characters') {
-            appendLog(`Repaired:   ${(result.cardsRepaired ?? 0).toLocaleString()}`);
-            if (withDictionary) appendLog(`Tags fixed: ${(result.tagsChanged ?? 0).toLocaleString()}`);
+        if (kind === 'tags') {
+            // No compression happens on this pass, so there are no bytes to report.
+            appendLog(`Unchanged:  ${result.filesSkipped.toLocaleString()}`);
+            appendLog(`Tags fixed: ${(result.tagsChanged ?? 0).toLocaleString()}`);
+        } else {
+            appendLog(`Skipped:    ${result.filesSkipped.toLocaleString()}`);
+            appendLog(`Compressed: ${result.filesCompressed.toLocaleString()}`);
+            if (kind === 'characters') appendLog(`Repaired:   ${(result.cardsRepaired ?? 0).toLocaleString()}`);
+            appendLog(`Saved:      ${formatBytes(result.bytesSaved)}`);
         }
-        appendLog(`Saved:      ${formatBytes(result.bytesSaved)}`);
         if (result.errors.length > 0) {
             appendLog(`\nErrors (${result.errors.length}):`);
             for (const e of result.errors) appendLog(`  ${e}`);
@@ -312,17 +332,17 @@ async function runPanelJob(path, kind, { withDictionary = false } = {}) {
         const repaired = result.cardsRepaired ?? 0;
         const tags = result.tagsChanged ?? 0;
         let summary;
-        if (kind !== 'characters') {
-            summary = savedMsg;
-        } else if (withDictionary) {
-            summary = `${tags.toLocaleString()} tag${tags === 1 ? '' : 's'} fixed, ${repaired.toLocaleString()} card${repaired === 1 ? '' : 's'} repaired. ${savedMsg}`;
-        } else {
+        if (kind === 'tags') {
+            summary = `${tags.toLocaleString()} card${tags === 1 ? '' : 's'} retagged`;
+        } else if (kind === 'characters') {
             summary = `${repaired.toLocaleString()} card${repaired === 1 ? '' : 's'} repaired. ${savedMsg}`;
+        } else {
+            summary = savedMsg;
         }
         toastr.success(summary, 'Character Tools');
 
-        // Character runs rewrite cards on disk — refresh ST so it picks them up.
-        if (kind === 'characters') {
+        // Both character passes rewrite cards on disk — refresh ST so it picks them up.
+        if (kind === 'characters' || kind === 'tags') {
             try {
                 const ctx = SillyTavern.getContext();
                 await ctx.getCharacters?.();
@@ -348,11 +368,13 @@ async function runPanelJob(path, kind, { withDictionary = false } = {}) {
     }
 }
 
-// Fix Characters: repair + compress only (no dictionary → the server skips the tag merge).
+// Fix Characters: repair + compress only. Sends no dictionary, so tags are untouched.
 const runFixCharacters = (reprocess = false) => runPanelJob(reprocess ? '/reprocess-characters' : '/fix-characters', 'characters');
-// Apply Tags: the same character pass WITH the dictionary attached, so the server merges tags.
-// Triggered from the Edit Tag Dictionary editor's footer, not the main panel.
-const runApplyTags = (reprocess = false) => runPanelJob(reprocess ? '/reprocess-characters' : '/fix-characters', 'characters', { withDictionary: true });
+// Apply Tags: tags only — no repair, no recompression. Triggered from the Edit Tag
+// Dictionary editor's footer, not the main panel. There's no reprocess variant: the
+// server decides per card whether the dictionary changes anything, so it's already
+// both idempotent and complete.
+const runApplyTags = () => runPanelJob('/apply-tags', 'tags');
 const runCompressImages = (reprocess = false) => runPanelJob(reprocess ? '/reprocess-all' : '/compress', 'images');
 
 // ── Editor ─────────────────────────────────────────────────────────────────────
@@ -371,7 +393,7 @@ async function openEditor() {
         // "unassigned" discovery match the user Apply Tags will run against.
         const characters = await fetchCharacterTags(user);
         const { mapping, removedTags, canonicalCategories, categoryOrder, baseMapping, baseRemovedTags } = await ensureDictionary();
-        openModal(characters, mapping, removedTags, canonicalCategories, categoryOrder, baseMapping, baseRemovedTags, () => runApplyTags(false));
+        openModal(characters, mapping, removedTags, canonicalCategories, categoryOrder, baseMapping, baseRemovedTags, () => runApplyTags());
     } catch (e) {
         console.error(MODULE_NAME, e);
         toastr.error('Failed to open the tag editor. See console.', 'Character Tools');
