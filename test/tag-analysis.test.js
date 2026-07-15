@@ -4,7 +4,6 @@ import {
     getCardTags,
     pickCanonical,
     buildBuckets,
-    applyRowsToTags,
 } from '../tag-analysis.js';
 
 // ── norm() ───────────────────────────────────────────────────────────────────
@@ -165,34 +164,5 @@ describe('buildBuckets', () => {
         const female = buckets.groups.find(g => g.canonical === 'Female');
         const femaleVariant = female.variants.find(v => v.tag === 'female');
         expect(femaleVariant.avatars).toEqual(['a.png']);
-    });
-});
-
-// ── applyRowsToTags() ───────────────────────────────────────────────────────────
-
-const rows = [{ canonical: 'Female', variants: [{ tag: 'female' }, { tag: 'woman' }] }];
-
-describe('applyRowsToTags', () => {
-    it('renames matched variants to their canonical', () => {
-        expect(applyRowsToTags(['woman', 'dragons'], rows)).toEqual(['Female', 'dragons']);
-    });
-
-    it('drops tags in the removed set (case-insensitive)', () => {
-        expect(applyRowsToTags(['woman', 'JUNK', 'dragons'], rows, new Set(['junk'])))
-            .toEqual(['Female', 'dragons']);
-    });
-
-    it('dedupes case-insensitively, first occurrence wins', () => {
-        expect(applyRowsToTags(['female', 'Female', 'woman'], rows)).toEqual(['Female']);
-    });
-
-    it('preserves unrelated tags and their order', () => {
-        expect(applyRowsToTags(['dragons', 'woman', 'space opera'], rows))
-            .toEqual(['dragons', 'Female', 'space opera']);
-    });
-
-    it('returns null when nothing changes (canonical already applied, no dupes)', () => {
-        expect(applyRowsToTags(['Female', 'dragons'], rows)).toBeNull();
-        expect(applyRowsToTags(['dragons'], rows)).toBeNull();
     });
 });

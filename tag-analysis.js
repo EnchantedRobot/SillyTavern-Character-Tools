@@ -4,9 +4,11 @@
 //
 // The live extension is mapping-driven: a persistent `{ canonical: [variant…] }`
 // dictionary is the source of truth. This module turns the cards + that mapping
-// into display buckets and applies the mapping to a card's tag list. The base
-// dictionary lives in tag-dictionary.json (category → canonical → aliases)
-// and is flattened to { canonical: [alias…] } on load.
+// into the editor's display buckets. It never rewrites a card's tags — the
+// actual merge/apply happens server-side (see the server plugin's tagMerge.ts);
+// this is purely dictionary-authoring analysis for the UI. The base dictionary
+// lives in tag-dictionary.json (category → canonical → aliases) and is flattened
+// to { canonical: [alias…] } on load.
 
 /**
  * Normalize a tag to its match key: trim, strip leading '#', trim again,
@@ -175,46 +177,4 @@ export function buildBuckets(characters, mapping, removedTags) {
         unassigned: unassigned.sort(byCount),
         removed: [...removedMap.values()].sort(byCount),
     };
-}
-
-/**
- * Apply approved rows to one card's tag list.
- * Renames any matched variant to its canonical, deletes any tag in `removedSet`
- * (case-insensitive), preserves unrelated tags and their order, and dedupes
- * case-insensitively.
- * @param {string[]} currentTags
- * @param {Array<{canonical:string, variants:Array<{tag:string}>}>} approvedRows
- * @param {Set<string>} [removedSet]  normalized tags to delete entirely
- * @returns {string[]|null} new tag array, or null if nothing changed
- */
-export function applyRowsToTags(currentTags, approvedRows, removedSet) {
-    // Map normalized variant -> canonical for every approved row.
-    const variantToCanonical = new Map();
-    for (const row of approvedRows) {
-        for (const v of row.variants) variantToCanonical.set(norm(v.tag), row.canonical);
-    }
-    const removed = removedSet ?? new Set();
-
-    const result = [];
-    const seen = new Set();
-    let changed = false;
-
-    const push = (tag) => {
-        const key = norm(tag);
-        if (seen.has(key)) { changed = true; return; } // dropped a dupe
-        seen.add(key);
-        result.push(tag);
-    };
-
-    for (const tag of currentTags) {
-        if (removed.has(norm(tag))) { changed = true; continue; } // junk — drop it
-        const canonical = variantToCanonical.get(norm(tag));
-        if (canonical === undefined) {
-            push(tag);
-        } else {
-            if (canonical !== tag) changed = true;
-            push(canonical);
-        }
-    }
-    return changed ? result : null;
 }

@@ -3,9 +3,9 @@ import globals from 'globals';
 
 export default [
     {
-        // Never lint tooling output, the Python corpus scripts, or the Claude
-        // skill's Node CLIs (they run under Node, not the browser).
-        ignores: ['node_modules/**', 'coverage/**', 'scripts/**', '.claude/**'],
+        // Never lint tooling output or the Claude skill's Node CLIs (they run
+        // under Node, not the browser).
+        ignores: ['node_modules/**', 'coverage/**', '.claude/**'],
     },
     js.configs.recommended,
     {
