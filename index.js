@@ -20,17 +20,24 @@
 
 import { openModal } from './ui-editor.js';
 import { probePlugin, fetchUsers, fetchStats, runJob, fetchCharacterTags } from './api.js';
+import { diffDictionary, applyDelta } from './tag-delta.js';
 
 const MODULE_NAME = '[Character Tools]';
 const PANEL_ID = 'sct-panel';
 export const EXT_KEY = 'CharacterTools';
 
 // ── Tag dictionary (extension-owned) ─────────────────────────────────────────
+//
+// The shipped base dictionary can run to hundreds of canonicals, but a user's
+// edits are almost always a handful of moves — so only the delta from the base
+// is persisted (see tag-delta.js), not the whole expanded dictionary. The
+// working dictionary handed to callers here is always the full, reconstructed
+// form; only what actually hits extension settings is small.
 
 /**
  * Return the extension's persisted settings, initialising defaults on first
- * access. The dictionary ({ canonical: [variant…] } + removedTags) is the
- * source of truth the server is handed each run.
+ * access. `delta` (overrides + blanks, see tag-delta.js) is the source of
+ * truth stored on disk; the full dictionary is reconstructed from it on read.
  */
 export function getExtSettings() {
     const { extensionSettings, saveSettingsDebounced } = SillyTavern.getContext();
@@ -39,23 +46,26 @@ export function getExtSettings() {
         saveSettingsDebounced?.();
     }
     const s = extensionSettings[EXT_KEY];
-    if (typeof s.mapping !== 'object' || s.mapping === null) s.mapping = {};
-    if (!Array.isArray(s.removedTags)) s.removedTags = [];
+    if (typeof s.delta !== 'object' || s.delta === null) s.delta = {};
+    if (typeof s.delta.overrides !== 'object' || s.delta.overrides === null) s.delta.overrides = {};
+    if (typeof s.delta.blanks !== 'object' || s.delta.blanks === null) s.delta.blanks = {};
     return s;
 }
 
-/** Persist the working dictionary (mapping + removed tags) back to settings. */
-export function saveDictionary(mapping, removedTags) {
+/** Persist the working dictionary (mapping + removed tags) as a delta against the base. */
+export async function saveDictionary(mapping, removedTags) {
     const s = getExtSettings();
-    s.mapping = mapping;
-    s.removedTags = removedTags;
+    const base = await loadBaseDictionary();
+    if (base) s.delta = diffDictionary(base, { mapping, removedTags });
     SillyTavern.getContext().saveSettingsDebounced?.();
 }
 
 const BASE_FILE = 'tag-dictionary.json';
+let baseDictCache = null;
 
-/** Fetch the shipped base dictionary (used to seed empty settings / reset). */
+/** Fetch the shipped base dictionary (used to seed empty settings / reset). Cached — it's a static file bundled with the extension. */
 export async function loadBaseDictionary() {
+    if (baseDictCache) return baseDictCache;
     try {
         const res = await fetch(new URL(`./${BASE_FILE}`, import.meta.url));
         if (!res.ok) return null;
@@ -69,12 +79,13 @@ export async function loadBaseDictionary() {
                 canonicalCategories[canonical] = cat;
             }
         }
-        return {
+        baseDictCache = {
             mapping: flat,
             removedTags: Array.isArray(json?.removedTags) ? json.removedTags : [],
             canonicalCategories,
             categoryOrder,
         };
+        return baseDictCache;
     } catch (e) {
         console.error(MODULE_NAME, `failed to load ${BASE_FILE}`, e);
         return null;
@@ -82,20 +93,40 @@ export async function loadBaseDictionary() {
 }
 
 /**
- * Return the user's dictionary, seeding it from the shipped base the first time
- * the extension is used. Always loads category metadata from the base file.
+ * Return the user's dictionary, reconstructed from the shipped base plus the
+ * persisted delta. Also migrates settings written by older versions that
+ * stored the full expanded dictionary instead of a delta. Always loads
+ * category metadata from the base file.
  */
 async function ensureDictionary() {
     const s = getExtSettings();
     const base = await loadBaseDictionary();
-    if (Object.keys(s.mapping).length === 0 && s.removedTags.length === 0 && base) {
-        s.mapping = base.mapping;
-        s.removedTags = base.removedTags;
+
+    // One-time migration: earlier versions persisted the full expanded
+    // dictionary (mapping + removedTags) rather than a delta against the base.
+    // Only drop the legacy fields once they've actually been folded into
+    // `delta` — if the base failed to load, leave them for the next attempt
+    // rather than silently losing the user's customizations.
+    const legacyMapping = s.mapping;
+    const legacyRemoved = s.removedTags;
+    const hasLegacyData = (legacyMapping && Object.keys(legacyMapping).length > 0)
+        || (Array.isArray(legacyRemoved) && legacyRemoved.length > 0);
+    if (hasLegacyData) {
+        if (!base) return { mapping: legacyMapping ?? {}, removedTags: legacyRemoved ?? [], canonicalCategories: {}, categoryOrder: [], baseMapping: {}, baseRemovedTags: [] };
+        s.delta = diffDictionary(base, { mapping: legacyMapping ?? {}, removedTags: legacyRemoved ?? [] });
+        delete s.mapping;
+        delete s.removedTags;
+        SillyTavern.getContext().saveSettingsDebounced?.();
+    } else if ('mapping' in s || 'removedTags' in s) {
+        delete s.mapping;
+        delete s.removedTags;
         SillyTavern.getContext().saveSettingsDebounced?.();
     }
+
+    const working = base ? applyDelta(base, s.delta) : { mapping: {}, removedTags: [] };
     return {
-        mapping: s.mapping,
-        removedTags: s.removedTags,
+        mapping: working.mapping,
+        removedTags: working.removedTags,
         canonicalCategories: base?.canonicalCategories ?? {},
         categoryOrder: base?.categoryOrder ?? [],
         baseMapping: base?.mapping ?? {},
@@ -104,11 +135,11 @@ async function ensureDictionary() {
 }
 
 /** The dictionary to hand the server for a character run, or undefined if empty. */
-function getRunDictionary() {
-    const s = getExtSettings();
-    const hasMapping = Object.keys(s.mapping).length > 0;
-    if (!hasMapping && s.removedTags.length === 0) return undefined;
-    return { mapping: s.mapping, removedTags: s.removedTags };
+async function getRunDictionary() {
+    const { mapping, removedTags } = await ensureDictionary();
+    const hasMapping = Object.keys(mapping).length > 0;
+    if (!hasMapping && removedTags.length === 0) return undefined;
+    return { mapping, removedTags };
 }
 
 // ── Formatting ───────────────────────────────────────────────────────────────
@@ -274,7 +305,7 @@ async function runPanelJob(path, kind) {
 
     const body = { user };
     if (kind === 'tags') {
-        const dict = getRunDictionary();
+        const dict = await getRunDictionary();
         if (!dict) {
             toastr.info('The tag dictionary is empty — nothing to apply.', 'Character Tools');
             return;

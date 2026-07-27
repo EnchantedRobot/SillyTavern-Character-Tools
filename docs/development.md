@@ -8,6 +8,7 @@
 | `api.js` | Thin client for the server plugin (`/api/plugins/character-tools/*`), incl. the SSE progress reader. |
 | `ui-editor.js` | The tag dictionary editor modal (curation only; applying is the server's job). |
 | `tag-analysis.js` | Pure tag logic (`norm`, `buildBuckets`) used by the editor. |
+| `tag-delta.js` | Pure diff/reconstruct helpers — persists only the delta between the shipped base dictionary and the user's edits (see `index.js`'s `saveDictionary`/`ensureDictionary`). |
 | `tag-dictionary.json` | Shipped base dictionary (categories → canonical → variants, plus `removedTags`); seed for new installs. |
 | `style.css` | Editor modal styling (theme-aware). |
 | `.claude/skills/categorize-tags/` | Skill for slotting newly-discovered tags into the dictionary. |
