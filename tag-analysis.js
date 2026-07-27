@@ -116,10 +116,19 @@ export function pickCanonical(variants) {
  * excluded from `unassigned`. A tag claimed by both a canonical and the removed
  * list stays with its canonical (mapping is the more specific intent).
  *
+ * Each variant carries `declared`: true for exact strings actually present in
+ * `mapping`/`removedTags`, false for exact strings that only got here by
+ * normalizing to match one of those (e.g. a different casing, or a card
+ * literally tagged with the canonical's own name). Callers that persist edits
+ * back to the dictionary MUST only write out `declared` variants — the
+ * discovered ones reattach automatically via `norm()` on every future load, so
+ * saving them too would silently re-declare every incidental casing/spelling
+ * variant your cards happen to use as if it were an intentional alias.
+ *
  * @param {object[]} characters
  * @param {Object<string,string[]>} mapping  canonical -> variant strings
  * @param {string[]} [removedTags]  tag strings flagged as junk
- * @returns {{groups: Array<{canonical:string, variants:Array<{tag:string,count:number,avatars:string[]}>}>, unassigned: Array<{tag:string,count:number,avatars:string[]}>, removed: Array<{tag:string,count:number,avatars:string[]}>}}
+ * @returns {{groups: Array<{canonical:string, variants:Array<{tag:string,count:number,avatars:string[],declared:boolean}>}>, unassigned: Array<{tag:string,count:number,avatars:string[]}>, removed: Array<{tag:string,count:number,avatars:string[],declared:boolean}>}}
  */
 export function buildBuckets(characters, mapping, removedTags) {
     const map = mapping || {};
@@ -138,7 +147,7 @@ export function buildBuckets(characters, mapping, removedTags) {
     const removedLookup = new Set();
     for (const t of removedTags ?? []) {
         removedLookup.add(norm(t));
-        if (!removedMap.has(String(t))) removedMap.set(String(t), { tag: String(t), count: 0, avatars: [] });
+        if (!removedMap.has(String(t))) removedMap.set(String(t), { tag: String(t), count: 0, avatars: [], declared: true });
     }
 
     // canonical -> Map(exact tag string -> variant). Seed with declared variants
@@ -150,7 +159,7 @@ export function buildBuckets(characters, mapping, removedTags) {
     for (const [canonical, variants] of Object.entries(map)) {
         const g = ensure(canonical);
         for (const v of variants ?? []) {
-            if (!g.has(String(v))) g.set(String(v), { tag: String(v), count: 0, avatars: [] });
+            if (!g.has(String(v))) g.set(String(v), { tag: String(v), count: 0, avatars: [], declared: true });
         }
     }
 
@@ -159,9 +168,15 @@ export function buildBuckets(characters, mapping, removedTags) {
         const variant = { tag, count: entry.count, avatars: [...entry.avatars] };
         const canonical = lookup.get(norm(tag));
         if (canonical) {
-            ensure(canonical).set(tag, variant); // observed string wins over the count-0 seed
+            const g = ensure(canonical);
+            // Exact-string match to a declared seed wins the real count/avatars
+            // but keeps its declared:true; any other exact string observed here
+            // only matched by normalizing, so it's discovered, not declared.
+            const declared = g.get(tag)?.declared ?? false;
+            g.set(tag, { ...variant, declared });
         } else if (removedLookup.has(norm(tag))) {
-            removedMap.set(tag, variant); // observed string wins over the count-0 seed
+            const declared = removedMap.get(tag)?.declared ?? false;
+            removedMap.set(tag, { ...variant, declared });
         } else {
             unassigned.push(variant);
         }

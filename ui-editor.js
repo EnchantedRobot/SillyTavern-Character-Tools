@@ -62,9 +62,9 @@ function currentSnapshot() {
     const mapping = {};
     for (const g of state.groups) {
         if (!g.canonical) continue;
-        mapping[g.canonical] = g.variants.map(v => v.tag);
+        mapping[g.canonical] = g.variants.filter(v => v.declared).map(v => v.tag);
     }
-    return dictSnapshot(mapping, state.removed.map(v => v.tag));
+    return dictSnapshot(mapping, state.removed.filter(v => v.declared).map(v => v.tag));
 }
 
 function updateResetBtn() {
@@ -80,14 +80,22 @@ function cardCount(group) {
     return set.size;
 }
 
-/** Rebuild the dictionary from live state and persist it to settings. */
+/**
+ * Rebuild the dictionary from live state and persist it to settings.
+ *
+ * Only `declared` variants are written out — chips that are only showing
+ * because a card's tag happens to normalize-match a canonical (a different
+ * casing, or the canonical's own bare name) reattach automatically on every
+ * future load via buildBuckets()'s norm() matching, so persisting them too
+ * would re-declare every incidental spelling your cards happen to use.
+ */
 function persist() {
     const mapping = {};
     for (const g of state.groups) {
         if (!g.canonical) continue;
-        mapping[g.canonical] = g.variants.map(v => v.tag);
+        mapping[g.canonical] = g.variants.filter(v => v.declared).map(v => v.tag);
     }
-    saveDictionary(mapping, state.removed.map(v => v.tag));
+    saveDictionary(mapping, state.removed.filter(v => v.declared).map(v => v.tag));
     updateResetBtn();
 }
 
@@ -223,7 +231,7 @@ function buildRow(group) {
     tr.querySelector('.ctm-row-dismiss').addEventListener('click', () => {
         syncFromDom();
         state.groups = state.groups.filter(g => g !== group);
-        for (const v of group.variants) state.unassigned.push(v);
+        for (const v of group.variants) { v.declared = false; state.unassigned.push(v); }
         persist();
         renderBody();
     });
@@ -436,13 +444,14 @@ function bulkMoveSelected(kind, to) {
     else state.unassigned = state.unassigned.filter(v => !variants.includes(v));
 
     if (to === 'new') {
+        for (const v of variants) v.declared = true;
         state.groups.push({ id: `g${groupSeq++}`, canonical: pickCanonical(variants), variants });
     } else if (to === 'removed') {
-        for (const v of variants) state.removed.push(v);
+        for (const v of variants) { v.declared = true; state.removed.push(v); }
     } else if (to === 'unassigned') {
-        for (const v of variants) state.unassigned.push(v);
+        for (const v of variants) { v.declared = false; state.unassigned.push(v); }
     } else {
-        for (const v of variants) to.variants.push(v);
+        for (const v of variants) { v.declared = true; to.variants.push(v); }
     }
     selectionBucket = null;
     persist();
@@ -553,12 +562,16 @@ function moveVariant(variant, from, to) {
 
     // Add to destination.
     if (to === 'unassigned') {
+        variant.declared = false;
         if (!state.unassigned.includes(variant)) state.unassigned.push(variant);
     } else if (to === 'removed') {
+        variant.declared = true;
         if (!state.removed.includes(variant)) state.removed.push(variant);
     } else if (to === 'new') {
+        variant.declared = true;
         state.groups.push({ id: `g${groupSeq++}`, canonical: pickCanonical([variant]), variants: [variant] });
     } else {
+        variant.declared = true;
         to.variants.push(variant);
     }
 

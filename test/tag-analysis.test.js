@@ -166,3 +166,42 @@ describe('buildBuckets', () => {
         expect(femaleVariant.avatars).toEqual(['a.png']);
     });
 });
+
+// ── declared vs discovered ──────────────────────────────────────────────────
+//
+// A variant is `declared` only if its exact string is actually listed in
+// mapping/removedTags; a card tag that merely normalizes to match one (a
+// different casing, or the canonical's own bare name) is `discovered`, not
+// declared. Callers persisting edits must save only declared variants —
+// discovered ones reattach automatically via norm() on every load, so saving
+// them too would re-declare every incidental spelling a card happens to use
+// (this is what caused a flood of spurious dictionary "overrides" for
+// same-spelling, different-casing tags that were never actually edited).
+
+function variantIn(list, tag) {
+    return list.find(v => v.tag === tag);
+}
+
+describe('buildBuckets — declared vs discovered', () => {
+    const buckets = buildBuckets(characters, mapping, removedTags);
+
+    it('flags an exact declared alias as declared, whether or not it is observed', () => {
+        const female = buckets.groups.find(g => g.canonical === 'Female').variants;
+        expect(variantIn(female, 'female').declared).toBe(true); // observed, exact declared match
+        expect(variantIn(female, 'woman').declared).toBe(true);  // declared, unobserved (count 0)
+    });
+
+    it('flags an observed tag that only matches by normalizing as discovered', () => {
+        const female = buckets.groups.find(g => g.canonical === 'Female').variants;
+        // 'Female' is never itself a declared alias — it only matched by
+        // normalizing to the same key as the declared 'female'.
+        expect(variantIn(female, 'Female').declared).toBe(false);
+
+        const romance = buckets.groups.find(g => g.canonical === 'Romance').variants;
+        expect(variantIn(romance, 'ROMANTIC').declared).toBe(false); // declared alias is 'romantic'
+    });
+
+    it('applies the same declared/discovered split to the removed bucket', () => {
+        expect(variantIn(buckets.removed, 'junk').declared).toBe(true); // exact declared junk
+    });
+});
