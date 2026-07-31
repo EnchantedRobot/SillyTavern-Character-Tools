@@ -104,6 +104,7 @@
         "future",
         "helldiver",
         "probability anomaly",
+        "psionic",
         "sci fi",
         "sci_fi",
         "science fiction",
@@ -145,6 +146,7 @@
       ],
       "Adventure": [
         "exploration",
+        "hitchhiker",
         "journey",
         "quest",
         "rescue mission",
@@ -166,12 +168,14 @@
         "alternate universe",
         "gate",
         "isekaiadventures",
+        "isekaid",
         "isekaidchar",
         "parallel universe",
         "portal",
         "portal fantasy",
         "reverse isekai",
         "reverseisekai",
+        "stuckingame",
         "summoned",
         "teleported"
       ],
@@ -256,15 +260,19 @@
         "gift giving",
         "giftwrapped",
         "givehertheworld",
+        "handholding",
         "loveconfession",
+        "lovey dovey",
         "loveydovey",
         "possiblefluff",
         "smuttyfluff"
       ],
       "Angst": [
+        "angstslop",
         "breaking",
         "emotional damage",
         "emotional erosion",
+        "goonangst",
         "guilt",
         "hate",
         "hateandlove",
@@ -282,6 +290,7 @@
         "hurt_comfort",
         "hurt-comfort",
         "hurtcomfort",
+        "needslove",
         "traumacomfort",
         "vulnerability"
       ],
@@ -299,6 +308,7 @@
       "Story Driven": [
         "character depth",
         "lore friendly",
+        "lore_heavy",
         "plot",
         "plotheavy",
         "psychological depth",
@@ -351,7 +361,9 @@
         "rome",
         "sparta"
       ],
-      "Feudal Japan": [],
+      "Feudal Japan": [
+        "edoperiod"
+      ],
       "Post-Apocalyptic": [
         "apocalypse",
         "post apocalyptic",
@@ -418,6 +430,7 @@
         "dormitory",
         "english major",
         "frat_sorority",
+        "freshman",
         "hazing",
         "sorority girl",
         "uni",
@@ -469,6 +482,7 @@
         "camping",
         "campingtrip",
         "chalet",
+        "desertedisland",
         "holiday",
         "hot spring",
         "island",
@@ -543,6 +557,7 @@
         "nonhuman protagonist",
         "parasite",
         "phoenix",
+        "sentient",
         "shapechanger",
         "shapeshifter"
       ],
@@ -554,10 +569,13 @@
         "crocodilegirl",
         "deer girl",
         "dinogirl",
+        "food creature",
         "goatgirl",
         "goblin girl",
         "gremlin",
         "horse girl",
+        "marshmallow girl",
+        "monster_girl",
         "monstergirl",
         "plantgirl",
         "sharkgirl",
@@ -568,16 +586,23 @@
         "wildgirl"
       ],
       "Cat Girl": [
+        "bastet",
         "cat ears and cat tail",
         "catgirl",
         "catgirls",
         "cheetahgirl",
+        "jaguargirl",
+        "liongirl",
         "magiccat",
+        "manulgirl",
         "neko",
         "nekomata",
         "nekomimi",
         "orange tabby",
+        "pallascatgirl",
         "panthergirl",
+        "siamesecatgirl",
+        "smilodongirl",
         "tigergirl"
       ],
       "Fox Girl": [
@@ -592,6 +617,7 @@
       ],
       "Dog Girl": [
         "cerberus",
+        "chowchowgirl",
         "doggirl",
         "goldenretriever",
         "labradorretrievergirl"
@@ -639,6 +665,7 @@
         "vampires"
       ],
       "Angel": [
+        "angelgirl",
         "fallen angel",
         "guardian angel"
       ],
@@ -707,23 +734,42 @@
         "anthro",
         "anthro days",
         "anthropomorphic animals",
+        "batgirl",
+        "beavergirl",
+        "birdgirl",
         "bull",
+        "butterflygirl",
         "deer",
+        "deergirl",
+        "dolphingirl",
+        "dovegirl",
         "harpy",
+        "hawkgirl",
         "horsegirl",
+        "koalagirl",
+        "lemur",
+        "mammothgirl",
         "minotaur",
         "orcagirl",
         "pandagirl",
+        "piggirl",
+        "possumgirl",
+        "raccoongirl",
+        "ravengirl",
+        "redpandagirl",
+        "seagullgirl",
         "shark",
         "sharkgirlgf",
         "sharkgirls",
         "slothgirl",
         "squirrel",
         "squirrel girl",
-        "squirrelgirl"
+        "squirrelgirl",
+        "velociraptorgirl"
       ],
       "Undead": [
         "frankenstein",
+        "grimreaper",
         "mummy",
         "undead female",
         "zombie",
@@ -791,7 +837,8 @@
         "china"
       ],
       "Latina": [
-        "hispanic"
+        "hispanic",
+        "mexican"
       ],
       "Black": [
         "african american",
@@ -843,7 +890,8 @@
       "Oceanian": [
         "australian",
         "hawaiian"
-      ]
+      ],
+      "American": []
     },
     "Personality / Archetype": {
       "Tsundere": [
@@ -872,7 +920,8 @@
         "bratty",
         "himedere",
         "mesugaki",
-        "spoiled brat"
+        "spoiled brat",
+        "spoiledbrat"
       ],
       "Shy": [
         "awkward",
@@ -1077,7 +1126,8 @@
       "Cunning": [
         "savvy",
         "scheming",
-        "sneaky"
+        "sneaky",
+        "swindler"
       ],
       "Innocent": [
         "clueless",
@@ -1217,13 +1267,18 @@
       "Cutie": [
         "cutiealert",
         "manic pixie",
-        "manic pixie dream girl"
+        "manic pixie dream girl",
+        "smol"
+      ],
+      "Powerless": [
+        "defeated"
       ]
     },
     "Relationship / Role": {
       "Girlfriend": [
         "college girlfriend",
         "distantgf",
+        "e-girlfriend",
         "exgirlfriend",
         "first girlfriend",
         "girlfriendchar",
@@ -1254,6 +1309,7 @@
         "neglected wife",
         "protectivewife",
         "raptorwife",
+        "sadwife",
         "spoiledwife",
         "trad wife",
         "trophywife",
@@ -1265,7 +1321,8 @@
         "childhood_friend",
         "childhoodbestfriend",
         "childhoodfriend",
-        "childhoodfriends"
+        "childhoodfriends",
+        "chilhoodfriend"
       ],
       "Best Friend": [
         "best_friend",
@@ -1293,6 +1350,7 @@
         "enemies_to_lovers",
         "enemiestoloverspotenc",
         "enemy",
+        "lovers to enemies to lovers",
         "rival",
         "rivalry",
         "rivals"
@@ -1383,6 +1441,7 @@
       ],
       "Sister": [
         "big sister",
+        "friendsister",
         "imouto",
         "little sister",
         "older sister",
@@ -1440,6 +1499,7 @@
         "contractual_relationship",
         "forced marriage",
         "forcedmarriage",
+        "surprisemarriage",
         "unwantedmarriage"
       ],
       "Slow Burn": [
@@ -1475,11 +1535,14 @@
       "Royalty": [
         "aristocrat",
         "court",
+        "daimyo",
+        "dictator",
         "empress",
         "kingdom",
         "nobility",
         "noble",
         "noblechar",
+        "noblelady",
         "noblerights",
         "noblewoman",
         "prince",
@@ -1592,9 +1655,12 @@
       ],
       "Fake Dating": [
         "fake relationship",
+        "fakeconfession",
         "fakedate",
         "fakedating",
-        "fakegirlfriend"
+        "fakegirlfriend",
+        "fakerelationship",
+        "pretendlovers"
       ],
       "Friends to Enemies": [
         "exfriend",
@@ -1626,7 +1692,8 @@
         "niece",
         "platonicfamily",
         "sibling",
-        "stepfamily"
+        "stepfamily",
+        "triplets"
       ],
       "Cousin": [],
       "Dating": [
@@ -1663,6 +1730,7 @@
         "hidden desire",
         "hiddenfeelings",
         "innocent flirting",
+        "pining",
         "secret crush",
         "secretadmirer",
         "secretattraction",
@@ -1679,6 +1747,7 @@
       "Ex-Girlfriend": [
         "ex",
         "ex girlfriend",
+        "ex-boyfriend",
         "exgirlfriends",
         "exgirlfriendssister",
         "exlovers",
@@ -1696,12 +1765,17 @@
       ],
       "Colleagues to Lovers": [
         "colleagues_to_lovers"
+      ],
+      "Commoner": [],
+      "Sidekick": [
+        "sidekickpov"
       ]
     },
     "Age": {
       "Age Defined": [
         "adult",
         "adult woman",
+        "child",
         "legal teen",
         "loli",
         "shota",
@@ -1743,7 +1817,9 @@
         "genderdiscovery",
         "trans"
       ],
-      "Non-Binary": []
+      "Non-Binary": [
+        "demigirlclans"
+      ]
     },
     "Cast": {
       "Multiple Characters": [
@@ -1776,6 +1852,7 @@
       "Lesbian": [
         "lesbian (w4w)",
         "lesbian cheating",
+        "lowkenuinelylesbian",
         "wlw",
         "yuri"
       ],
@@ -1891,7 +1968,8 @@
         "partying",
         "partyscene",
         "pub",
-        "rave"
+        "rave",
+        "slumberparty"
       ],
       "Gambling": [
         "bet",
@@ -1899,12 +1977,18 @@
         "debt",
         "high stakes",
         "poker"
+      ],
+      "Cars": [
+        "bmw",
+        "cargirl",
+        "toyota"
       ]
     },
     "Holiday": {
       "Christmas": [
         "2025christmas",
         "christmas2024",
+        "christmasinjuly",
         "christmasmarket",
         "merrychirstmas",
         "reindeergirl",
@@ -1929,6 +2013,7 @@
         "easter bunny",
         "easter egg",
         "easter eggs",
+        "easter2025",
         "easterbunny",
         "easteregg",
         "eastereggs"
@@ -1942,7 +2027,10 @@
         "eloped",
         "oneyearanniversary"
       ],
-      "Thanksgiving": []
+      "Thanksgiving": [],
+      "Pride": [
+        "pride2025"
+      ]
     },
     "Content Rating": {
       "SFW": [
@@ -2011,6 +2099,7 @@
         "ntr crusade",
         "ntr-adjacent",
         "ntrbait",
+        "ntrslop",
         "optionalntr",
         "possible ntr",
         "possiblentr",
@@ -2037,7 +2126,8 @@
         "stealinggf"
       ],
       "Netorase": [
-        "nts"
+        "nts",
+        "reverse ntr"
       ],
       "Cheating": [
         "affair",
@@ -2119,6 +2209,7 @@
         "walkedinon"
       ],
       "Voyeurism": [
+        "peepingtom",
         "vouyerism",
         "voyeur"
       ],
@@ -2126,6 +2217,7 @@
         "abortion",
         "breast feeding",
         "breastfeeding",
+        "fakepregnancy",
         "impregnation",
         "lactation",
         "pragnent",
@@ -2151,7 +2243,8 @@
         "mind games",
         "mind_control",
         "mindbreak",
-        "mindreading"
+        "mindreading",
+        "possessed"
       ],
       "Hypnosis": [
         "avoidablehypnosis",
@@ -2249,6 +2342,7 @@
         "virginity"
       ],
       "Nympho": [
+        "hypersexual",
         "hypersexuality",
         "nymphomaniac",
         "promiscuous",
@@ -2282,6 +2376,7 @@
       "Gender Bender": [
         "gendebent",
         "genderbend",
+        "genderbender",
         "genderbent",
         "genderswap",
         "multiple genders",
@@ -2330,6 +2425,7 @@
         "brother x sister",
         "incest_stepcest",
         "oyakodon",
+        "possible incest",
         "step incest",
         "stepcest",
         "twincest"
@@ -2541,7 +2637,16 @@
         "masturbationguide",
         "needyourcream",
         "sexorders"
-      ]
+      ],
+      "Omegaverse": [
+        "alphachar",
+        "omegachar"
+      ],
+      "Voice Kink": [
+        "auralism",
+        "voicekink"
+      ],
+      "Snuff": []
     },
     "Occupation": {
       "Knight": [
@@ -2561,6 +2666,7 @@
         "tank"
       ],
       "Magical Girl": [
+        "magicalgirl",
         "magicgirls"
       ],
       "Mage": [
@@ -2640,6 +2746,7 @@
       ],
       "Criminal": [
         "murderer",
+        "serial killer",
         "smuggler"
       ],
       "Bartender": [
@@ -2683,7 +2790,8 @@
         "defector",
         "pmc",
         "secret agent",
-        "spychar"
+        "spychar",
+        "undercover agent"
       ],
       "Pirate": [],
       "Viking": [
@@ -2745,7 +2853,8 @@
       "Mechanic": [],
       "Merchant": [],
       "Librarian": [
-        "bookstore"
+        "bookstore",
+        "library"
       ],
       "Entertainer": [
         "actor",
@@ -2793,7 +2902,8 @@
         "officewoman",
         "white collar",
         "white_collar"
-      ]
+      ],
+      "Lawyer": []
     },
     "Plot / Theme": {
       "Betrayal": [
@@ -2825,6 +2935,7 @@
         "kidnapper",
         "prison",
         "prisoner",
+        "prisonerpov",
         "trapped"
       ],
       "Toxic Relationship": [
@@ -2832,6 +2943,8 @@
         "controlling",
         "controllingpartner",
         "fakelove",
+        "misandry",
+        "misogyny",
         "redflag",
         "redflagalert",
         "toxic",
@@ -2848,7 +2961,8 @@
         "power fantasy",
         "power play",
         "power_dynamics",
-        "powerimbalance"
+        "powerimbalance",
+        "powerplay"
       ],
       "Stalker": [
         "stalked",
@@ -2857,9 +2971,11 @@
       ],
       "Redemption": [
         "ex-hero",
+        "fallenhero",
         "forgiveness",
         "newbeginnings",
         "redemptionweek",
+        "reformed",
         "second chance",
         "secondchance"
       ],
@@ -2884,6 +3000,7 @@
         "time travelling",
         "timeleap",
         "timeloop",
+        "timereversal",
         "timetravel",
         "timetravelerchar"
       ],
@@ -2899,6 +3016,7 @@
         "folklore",
         "heaven",
         "hell",
+        "inquisition",
         "monk",
         "muslim",
         "mythological",
@@ -2945,6 +3063,7 @@
         "break up",
         "breakup",
         "heartbreaker",
+        "hookupaftermath",
         "messyromance",
         "moving on",
         "movingon",
@@ -2995,13 +3114,15 @@
       "Politics": [
         "anti-gay",
         "conservative",
+        "democracy",
         "feminist",
         "liberation",
         "misandrist",
         "politic",
         "politician",
         "racism",
-        "rebellion"
+        "rebellion",
+        "revolutionary"
       ],
       "Secret": [
         "rumor"
@@ -3012,6 +3133,11 @@
         "forcedrelationship",
         "sharingabed",
         "stucktogether"
+      ],
+      "Clones": [],
+      "Trial": [],
+      "Lab Experiment": [
+        "labexperiment"
       ]
     },
     "Fandom": {
@@ -3187,6 +3313,14 @@
       ],
       "NCS Cinematic Universe": [
         "ncscinematicuniverse"
+      ],
+      "Arcanith Academy": [],
+      "Lumina Fracta": [],
+      "LOTR": [
+        "middleearth"
+      ],
+      "Honkai Impact 3rd": [
+        "honkaiimpact3rd"
       ]
     },
     "Mental Health / Condition": {
@@ -3196,12 +3330,14 @@
         "mental illness",
         "mentally ill",
         "postpartumdepression",
+        "selfloathing",
         "suicidal",
         "suicidalchar"
       ],
       "Anxiety": [
         "anxious",
         "paranoia",
+        "paranoid",
         "selectivemutism"
       ],
       "Trauma": [
@@ -3239,11 +3375,14 @@
         "deaf",
         "disabled",
         "disabledchar",
+        "dying",
         "handicapped",
         "incurabledisease",
         "injured",
+        "mute",
         "terminal illness",
         "terminalillness",
+        "terminally ill",
         "terminallyill",
         "wheelchair",
         "wheelchairchar",
@@ -4197,6 +4336,12 @@
     "unreliable_narrator",
     "unreliable",
     "urban_fiction",
-    "blaxploitation"
+    "blaxploitation",
+    "birmingham",
+    "brainrot",
+    "candy",
+    "gooner neet",
+    "goonpril",
+    "sasha alexander"
   ]
 }
